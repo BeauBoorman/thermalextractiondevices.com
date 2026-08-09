@@ -30,7 +30,8 @@
     "shared_collections": true
   },
   "state_maps": [
-    "data/massachusetts-ccc/id-map.json"
+    "data/massachusetts-ccc/id-map.json",
+    "data/michigan-cra/id-map.json"
   ],
   "state_map_globs": [
     "data/*-ccc/id-map.json"

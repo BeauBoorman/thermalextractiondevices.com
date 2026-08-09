@@ -57,7 +57,8 @@ def build_parser() -> argparse.ArgumentParser:
         prog="state_ingest.py",
         description="Ingest state-backed cannabis data into the Boris archive.",
     )
-    parser.add_argument("state", choices=["massachusetts"], help="State adapter to run")
+    parser.add_argument("state", choices=["massachusetts", "michigan"],
+                        help="State adapter to run")
     parser.add_argument("--refresh", action="store_true",
                         help="Re-download datasets even when snapshots match")
     parser.add_argument("--dataset", action="append", dest="datasets", default=None,
@@ -80,14 +81,15 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def _new_store(args, state: str) -> ArtifactStore:
+    durable_slug = {"michigan": "michigan-cra"}.get(state, f"{state}-ccc")
     if args.fixtures_only:
         # Fixture runs are fully isolated and must never touch committed data.
         base = Path(tempfile.mkdtemp(prefix=f"{state}-ingest-fixture-"))
         return ArtifactStore(state=state,
-                             working_root=base / "var" / "ingest" / f"{state}-ccc",
-                             durable_root=base / "data" / f"{state}-ccc")
-    working = args.artifacts_dir or (ROOT / "var" / "ingest" / f"{state}-ccc")
-    durable = ROOT / "data" / f"{state}-ccc"
+                             working_root=base / "var" / "ingest" / durable_slug,
+                             durable_root=base / "data" / durable_slug)
+    working = args.artifacts_dir or (ROOT / "var" / "ingest" / durable_slug)
+    durable = ROOT / "data" / durable_slug
     return ArtifactStore(state=state, working_root=working, durable_root=durable)
 
 
@@ -96,7 +98,10 @@ def main() -> int:
     state = args.state
 
     try:
-        from scripts.ingest.states import massachusetts as ma
+        if state == "massachusetts":
+            from scripts.ingest.states import massachusetts as adapter
+        else:
+            from scripts.ingest.states import michigan as adapter
     except ImportError as error:  # pragma: no cover
         print(f"state_ingest: cannot load {state} adapter: {error}", file=sys.stderr)
         return 2
@@ -114,15 +119,19 @@ def main() -> int:
 
     store = _new_store(args, state)
     registry_path = store.durable_root / "id-map.json"
-    registry = NaturalKeyRegistry(registry_path, ma.ID_PREFIXES, ma.ID_COLLECTIONS)
+    registry = NaturalKeyRegistry(registry_path, adapter.ID_PREFIXES,
+                                  adapter.ID_COLLECTIONS)
     if not args.fixtures_only:
-        # Massachusetts shares the canonical collections with California and
-        # editorial content. Seed the allocator from the combined content tree
-        # so newly allocated IDs never collide with existing entities.
+        # All state adapters share the canonical collections with California
+        # and editorial content. Seed the allocator from the combined content
+        # tree so newly allocated IDs never collide with existing entities.
         registry.seed_from_entity_ids(collect_entity_ids(ROOT / "content"))
 
     if args.report_only:
-        return _report_only(args, store, ma)
+        return _report_only(args, store, adapter)
+
+    if state == "michigan":
+        return _run_michigan(args, store, registry, adapter)
 
     fetcher: object
     if args.fixtures_only:
@@ -131,11 +140,11 @@ def main() -> int:
     else:
         fetcher = Fetcher()
 
-    datasets = args.datasets or list(ma.DATASETS.keys())
+    datasets = args.datasets or list(adapter.DATASETS.keys())
     for requested in args.datasets or []:
-        if requested not in ma.DATASETS:
+        if requested not in adapter.DATASETS:
             print(f"state_ingest: unknown dataset {requested!r}; "
-                  f"known: {', '.join(sorted(ma.DATASETS))}", file=sys.stderr)
+                  f"known: {', '.join(sorted(adapter.DATASETS))}", file=sys.stderr)
             return 2
 
     # Dev-flag output is routed to an isolated, gitignored demo directory so
@@ -148,7 +157,7 @@ def main() -> int:
     else:
         content_root = ROOT / "content"
 
-    sync = ma.MassachusettsSync(
+    sync = adapter.MassachusettsSync(
         fetch=fetcher, store=store, registry=registry,
         content_root=content_root, datasets=datasets,
         refresh=args.refresh, fixtures_only=args.fixtures_only,
@@ -183,10 +192,57 @@ def main() -> int:
     return 1 if report.errors else 0
 
 
-def _publish_gates(store, report, *, quiet: bool) -> list[str]:
+def _run_michigan(args, store, registry, adapter) -> int:
+    """Run the Michigan offline ingestion pipeline.
+
+    Michigan is offline-first: the CRA publishes PDFs, not live endpoints,
+    so dataset runs read the committed extracts (data/michigan-cra/,
+    tests/fixtures/michigan/) instead of fetching. The sync constructs with
+    no fetcher, mirroring the Massachusetts flow around it.
+    """
+    content_root = ROOT / "content"
+    if args.fixtures_only and args.allow_fixture_content and not args.skip_content:
+        demo = ROOT / "var" / "ingest" / "michigan-cra" / "demo-content"
+        content_root = demo
+        print(f"state_ingest: dev-flag content will be written to {demo} "
+              "(isolated; never publishable)", file=sys.stderr)
+
+    sync = adapter.MichiganSync(
+        store=store, registry=registry, content_root=content_root,
+        allow_fixture_content=args.allow_fixture_content,
+        fixtures_only=args.fixtures_only,
+    )
+
+    report = ChangeReport(state="michigan", run_id=_run_id(), started_at=utc_now())
+    if not args.skip_content:
+        sync.generate_content(report)
+
+    errors: list[str] = []
+    if not args.skip_publish:
+        errors += _publish_gates(store, report, quiet=args.quiet,
+                                 spec=adapter.PRIVACY_SPEC)
+
+    report.completed_at = utc_now()
+    report.errors.extend(errors)
+    sync.store.write_report(f"sync-{report.run_id}.md", report.to_markdown())
+    registry.save()
+
+    if not args.quiet:
+        print(report.to_markdown())
+    else:
+        ok = not report.errors
+        print(f"state_ingest: {'OK' if ok else 'FAILED'} michigan run={report.run_id} "
+              f"pages={len(report.pages_generated)} "
+              f"warnings={len(report.warnings)} errors={len(report.errors)}")
+    return 1 if report.errors else 0
+
+
+def _publish_gates(store, report, *, quiet: bool, spec=None) -> list[str]:
     """Privacy scan, relation targets, ID validation, Markdown links, Boris gate."""
-    from scripts.ingest.states.massachusetts import PRIVACY_SPEC
     from scripts.ingest.validation import PrivacyViolationError
+
+    if spec is None:
+        from scripts.ingest.states.massachusetts import PRIVACY_SPEC as spec
 
     errors: list[str] = []
     content = ROOT / "content"
@@ -195,14 +251,16 @@ def _publish_gates(store, report, *, quiet: bool) -> list[str]:
     # Massachusetts-created trunk pages), never other states' or workstreams'
     # content. Whole-collection scanning would wrongly fail on unrelated
     # content (e.g. jurisdiction scaffold prose like "2018 Constitutional
-    # Court" or legal citations) that Massachusetts does not publish.
-    ma_trunks = {"safety-advisories.md", "affected-products.md"}
-    ma_paths = {p for p in report.pages_generated if p.endswith(".md")} | ma_trunks
+    # Court" or legal citations) that this state does not publish.
+    state_trunks = ({"safety-advisories.md", "affected-products.md"}
+                    if report.state == "massachusetts" else set())
+    state_paths = ({p for p in report.pages_generated if p.endswith(".md")}
+                   | state_trunks)
     # The reference/ privacy-spec page is generated by this pipeline but
     # deliberately names excluded source fields ("EIN_TIN", "BUSINESS_EMAIL")
     # as policy examples; the field-marker scan must not flag the spec itself.
-    ma_paths = {p for p in ma_paths if not p.startswith("reference/")}
-    findings = scan_directory(content, PRIVACY_SPEC, only_paths=ma_paths or None)
+    state_paths = {p for p in state_paths if not p.startswith("reference/")}
+    findings = scan_directory(content, spec, only_paths=state_paths or None)
     if findings:
         errors.append(f"privacy scan: {len(findings)} finding(s); first: {findings[0]}")
         for finding in findings[:5]:

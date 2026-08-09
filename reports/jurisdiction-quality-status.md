@@ -36,7 +36,7 @@ This is an editorial workflow label, **not a legal rating**. Statuses:
 | TJUR-0020 | Maine | baseline | |
 | TJUR-0021 | Maryland | baseline | |
 | TJUR-0022 | Massachusetts | data-ingestion-ready | Adapter fixture-tested; live sync pending |
-| TJUR-0023 | Michigan | deep-ingested | CRA evidence pass; public license/COA surfaces remain partial |
+| TJUR-0023 | Michigan | deep-ingested | CRA evidence pass; public license/COA surfaces remain partial; offline deep-ingestion adapter landed (michigan.py), generated entities bound to this profile |
 | TJUR-0024 | Minnesota | baseline | Market ramp-up 2025–26 |
 | TJUR-0025 | Mississippi | stub-verified | |
 | TJUR-0026 | Missouri | stub-verified | Seed-to-sale vendor in flux |

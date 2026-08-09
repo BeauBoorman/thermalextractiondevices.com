@@ -1,0 +1,2135 @@
+{
+  "version": 1,
+  "state": null,
+  "mappings": [
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:1,1,1-Trichloroethane",
+      "entity_id": "contaminants/TCNT-0034",
+      "label": "1,1,1-Trichloroethane",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:1,1-Dichloroethene",
+      "entity_id": "contaminants/TCNT-0033",
+      "label": "1,1-Dichloroethene",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:1,2-Dichloroethane",
+      "entity_id": "contaminants/TCNT-0032",
+      "label": "1,2-Dichloroethane",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Abamectin",
+      "entity_id": "contaminants/TCNT-0043",
+      "label": "Abamectin",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Acephate",
+      "entity_id": "contaminants/TCNT-0044",
+      "label": "Acephate",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Acetone",
+      "entity_id": "contaminants/TCNT-0035",
+      "label": "Acetone",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Aflatoxin B1",
+      "entity_id": "contaminants/TCNT-0090",
+      "label": "Aflatoxin B1",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Aflatoxin B2",
+      "entity_id": "contaminants/TCNT-0091",
+      "label": "Aflatoxin B2",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Aflatoxin G1",
+      "entity_id": "contaminants/TCNT-0092",
+      "label": "Aflatoxin G1",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Aflatoxin G2",
+      "entity_id": "contaminants/TCNT-0093",
+      "label": "Aflatoxin G2",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Arsenic",
+      "entity_id": "contaminants/TCNT-0078",
+      "label": "Arsenic",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Aspergillus flavus",
+      "entity_id": "contaminants/TCNT-0086",
+      "label": "Aspergillus flavus",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Aspergillus fumigatus",
+      "entity_id": "contaminants/TCNT-0087",
+      "label": "Aspergillus fumigatus",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Aspergillus niger",
+      "entity_id": "contaminants/TCNT-0088",
+      "label": "Aspergillus niger",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Aspergillus terreus",
+      "entity_id": "contaminants/TCNT-0089",
+      "label": "Aspergillus terreus",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Benzene",
+      "entity_id": "contaminants/TCNT-0030",
+      "label": "Benzene",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Bifenazate",
+      "entity_id": "contaminants/TCNT-0045",
+      "label": "Bifenazate",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Bifenthrin",
+      "entity_id": "contaminants/TCNT-0046",
+      "label": "Bifenthrin",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Bile-Tolerant Gram-Negative Bacteria",
+      "entity_id": "contaminants/TCNT-0082",
+      "label": "Bile-Tolerant Gram-Negative Bacteria",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Butane",
+      "entity_id": "contaminants/TCNT-0036",
+      "label": "Butane",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:CBD",
+      "entity_id": "contaminants/TCNT-0021",
+      "label": "CBD",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:CBDA",
+      "entity_id": "contaminants/TCNT-0020",
+      "label": "CBDA",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:CBG",
+      "entity_id": "contaminants/TCNT-0024",
+      "label": "CBG",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:CBGA",
+      "entity_id": "contaminants/TCNT-0023",
+      "label": "CBGA",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:CBN",
+      "entity_id": "contaminants/TCNT-0022",
+      "label": "CBN",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Cadmium",
+      "entity_id": "contaminants/TCNT-0079",
+      "label": "Cadmium",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Carbon Tetrachloride",
+      "entity_id": "contaminants/TCNT-0031",
+      "label": "Carbon Tetrachloride",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Chlordane",
+      "entity_id": "contaminants/TCNT-0047",
+      "label": "Chlordane",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Chlorfenapyr",
+      "entity_id": "contaminants/TCNT-0048",
+      "label": "Chlorfenapyr",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Chlorpyrifos",
+      "entity_id": "contaminants/TCNT-0049",
+      "label": "Chlorpyrifos",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Cyfluthrin",
+      "entity_id": "contaminants/TCNT-0050",
+      "label": "Cyfluthrin",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Cypermethrin",
+      "entity_id": "contaminants/TCNT-0051",
+      "label": "Cypermethrin",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Daminozide",
+      "entity_id": "contaminants/TCNT-0052",
+      "label": "Daminozide",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Delta-8-THC",
+      "entity_id": "contaminants/TCNT-0025",
+      "label": "Delta-8-THC",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Delta-9-THC",
+      "entity_id": "contaminants/TCNT-0019",
+      "label": "Delta-9-THC",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Diazinon",
+      "entity_id": "contaminants/TCNT-0053",
+      "label": "Diazinon",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Dichlorvos",
+      "entity_id": "contaminants/TCNT-0054",
+      "label": "Dichlorvos",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Dimethomorph",
+      "entity_id": "contaminants/TCNT-0055",
+      "label": "Dimethomorph",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Ethanol",
+      "entity_id": "contaminants/TCNT-0037",
+      "label": "Ethanol",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Ethyl Acetate",
+      "entity_id": "contaminants/TCNT-0038",
+      "label": "Ethyl Acetate",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Etoxazole",
+      "entity_id": "contaminants/TCNT-0056",
+      "label": "Etoxazole",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Fenoxycarb",
+      "entity_id": "contaminants/TCNT-0057",
+      "label": "Fenoxycarb",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Fipronil",
+      "entity_id": "contaminants/TCNT-0058",
+      "label": "Fipronil",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Fludioxonil",
+      "entity_id": "contaminants/TCNT-0059",
+      "label": "Fludioxonil",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Heptane",
+      "entity_id": "contaminants/TCNT-0039",
+      "label": "Heptane",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Imazalil",
+      "entity_id": "contaminants/TCNT-0060",
+      "label": "Imazalil",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Imidacloprid",
+      "entity_id": "contaminants/TCNT-0061",
+      "label": "Imidacloprid",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Isopropyl Alcohol",
+      "entity_id": "contaminants/TCNT-0040",
+      "label": "Isopropyl Alcohol",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Lead",
+      "entity_id": "contaminants/TCNT-0080",
+      "label": "Lead",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Malathion",
+      "entity_id": "contaminants/TCNT-0062",
+      "label": "Malathion",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Mercury",
+      "entity_id": "contaminants/TCNT-0081",
+      "label": "Mercury",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Metalaxyl",
+      "entity_id": "contaminants/TCNT-0063",
+      "label": "Metalaxyl",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Methomyl",
+      "entity_id": "contaminants/TCNT-0064",
+      "label": "Methomyl",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Methyl Parathion",
+      "entity_id": "contaminants/TCNT-0065",
+      "label": "Methyl Parathion",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Moisture Content",
+      "entity_id": "contaminants/TCNT-0028",
+      "label": "Moisture Content",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Myclobutanil",
+      "entity_id": "contaminants/TCNT-0066",
+      "label": "Myclobutanil",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Ochratoxin A",
+      "entity_id": "contaminants/TCNT-0094",
+      "label": "Ochratoxin A",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Paclobutrazol",
+      "entity_id": "contaminants/TCNT-0067",
+      "label": "Paclobutrazol",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Pathogenic E. coli",
+      "entity_id": "contaminants/TCNT-0083",
+      "label": "Pathogenic E. coli",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Pentane",
+      "entity_id": "contaminants/TCNT-0041",
+      "label": "Pentane",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Permethrin",
+      "entity_id": "contaminants/TCNT-0068",
+      "label": "Permethrin",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Phosmet",
+      "entity_id": "contaminants/TCNT-0069",
+      "label": "Phosmet",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Piperonyl Butoxide",
+      "entity_id": "contaminants/TCNT-0070",
+      "label": "Piperonyl Butoxide",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Prallethrin",
+      "entity_id": "contaminants/TCNT-0071",
+      "label": "Prallethrin",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Propane",
+      "entity_id": "contaminants/TCNT-0042",
+      "label": "Propane",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Propiconazole",
+      "entity_id": "contaminants/TCNT-0072",
+      "label": "Propiconazole",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Pyrethrins",
+      "entity_id": "contaminants/TCNT-0073",
+      "label": "Pyrethrins",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Salmonella spp.",
+      "entity_id": "contaminants/TCNT-0084",
+      "label": "Salmonella spp.",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Spinosad",
+      "entity_id": "contaminants/TCNT-0074",
+      "label": "Spinosad",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Spiromesifen",
+      "entity_id": "contaminants/TCNT-0075",
+      "label": "Spiromesifen",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:THCA",
+      "entity_id": "contaminants/TCNT-0018",
+      "label": "THCA",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:THCV",
+      "entity_id": "contaminants/TCNT-0026",
+      "label": "THCV",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Tebuconazole",
+      "entity_id": "contaminants/TCNT-0076",
+      "label": "Tebuconazole",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Thiamethoxam",
+      "entity_id": "contaminants/TCNT-0077",
+      "label": "Thiamethoxam",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Total Aflatoxins",
+      "entity_id": "contaminants/TCNT-0095",
+      "label": "Total Aflatoxins",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Total THC (calculated)",
+      "entity_id": "contaminants/TCNT-0027",
+      "label": "Total THC (calculated)",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Total Yeast and Mold",
+      "entity_id": "contaminants/TCNT-0085",
+      "label": "Total Yeast and Mold",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Vitamin E Acetate",
+      "entity_id": "contaminants/TCNT-0096",
+      "label": "Vitamin E Acetate",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "contaminant",
+      "natural_key": "MI:contaminant:Water Activity (aw)",
+      "entity_id": "contaminants/TCNT-0029",
+      "label": "Water Activity (aw)",
+      "collection": "contaminants"
+    },
+    {
+      "entity_type": "dataset",
+      "natural_key": "MI:dataset:facilities",
+      "entity_id": "datasets/TDTS-0030",
+      "label": "Michigan CRA Licensed Facilities (Facility-Product Registry Extract)",
+      "collection": "datasets"
+    },
+    {
+      "entity_type": "dataset",
+      "natural_key": "MI:dataset:landscape",
+      "entity_id": "datasets/TDTS-0033",
+      "label": "Michigan Cannabis Data Landscape",
+      "collection": "datasets"
+    },
+    {
+      "entity_type": "dataset",
+      "natural_key": "MI:dataset:monthly_report",
+      "entity_id": "datasets/TDTS-0032",
+      "label": "Michigan CRA Monthly Statistical Report (February 2026)",
+      "collection": "datasets"
+    },
+    {
+      "entity_type": "dataset",
+      "natural_key": "MI:dataset:product_registry",
+      "entity_id": "datasets/TDTS-0031",
+      "label": "Michigan CRA Product Registry (Metrc Package Snapshot)",
+      "collection": "datasets"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-G-C-001060",
+      "entity_id": "licenses/TLIC-0146",
+      "label": "AU-G-C-001060",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-MB-A-000003",
+      "entity_id": "licenses/TLIC-0177",
+      "label": "AU-MB-A-000003",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-P-000175",
+      "entity_id": "licenses/TLIC-0120",
+      "label": "AU-P-000175",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-P-000234",
+      "entity_id": "licenses/TLIC-0183",
+      "label": "AU-P-000234",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-P-000373",
+      "entity_id": "licenses/TLIC-0096",
+      "label": "AU-P-000373",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-P-000392",
+      "entity_id": "licenses/TLIC-0167",
+      "label": "AU-P-000392",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-P-000420",
+      "entity_id": "licenses/TLIC-0160",
+      "label": "AU-P-000420",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000100",
+      "entity_id": "licenses/TLIC-0090",
+      "label": "AU-R-000100",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000103",
+      "entity_id": "licenses/TLIC-0086",
+      "label": "AU-R-000103",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000126",
+      "entity_id": "licenses/TLIC-0114",
+      "label": "AU-R-000126",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000128",
+      "entity_id": "licenses/TLIC-0105",
+      "label": "AU-R-000128",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000130",
+      "entity_id": "licenses/TLIC-0192",
+      "label": "AU-R-000130",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000143",
+      "entity_id": "licenses/TLIC-0193",
+      "label": "AU-R-000143",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000145",
+      "entity_id": "licenses/TLIC-0078",
+      "label": "AU-R-000145",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000152",
+      "entity_id": "licenses/TLIC-0190",
+      "label": "AU-R-000152",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000153",
+      "entity_id": "licenses/TLIC-0080",
+      "label": "AU-R-000153",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000194",
+      "entity_id": "licenses/TLIC-0217",
+      "label": "AU-R-000194",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000218",
+      "entity_id": "licenses/TLIC-0109",
+      "label": "AU-R-000218",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000220",
+      "entity_id": "licenses/TLIC-0110",
+      "label": "AU-R-000220",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000241",
+      "entity_id": "licenses/TLIC-0102",
+      "label": "AU-R-000241",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000249",
+      "entity_id": "licenses/TLIC-0073",
+      "label": "AU-R-000249",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000250",
+      "entity_id": "licenses/TLIC-0216",
+      "label": "AU-R-000250",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000266",
+      "entity_id": "licenses/TLIC-0115",
+      "label": "AU-R-000266",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000269",
+      "entity_id": "licenses/TLIC-0215",
+      "label": "AU-R-000269",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000270",
+      "entity_id": "licenses/TLIC-0153",
+      "label": "AU-R-000270",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000282",
+      "entity_id": "licenses/TLIC-0085",
+      "label": "AU-R-000282",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000284",
+      "entity_id": "licenses/TLIC-0138",
+      "label": "AU-R-000284",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000288",
+      "entity_id": "licenses/TLIC-0161",
+      "label": "AU-R-000288",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000291",
+      "entity_id": "licenses/TLIC-0227",
+      "label": "AU-R-000291",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000292",
+      "entity_id": "licenses/TLIC-0079",
+      "label": "AU-R-000292",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000293",
+      "entity_id": "licenses/TLIC-0037",
+      "label": "AU-R-000293",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000303",
+      "entity_id": "licenses/TLIC-0119",
+      "label": "AU-R-000303",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000317",
+      "entity_id": "licenses/TLIC-0049",
+      "label": "AU-R-000317",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000319",
+      "entity_id": "licenses/TLIC-0207",
+      "label": "AU-R-000319",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000320",
+      "entity_id": "licenses/TLIC-0092",
+      "label": "AU-R-000320",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000321",
+      "entity_id": "licenses/TLIC-0091",
+      "label": "AU-R-000321",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000325",
+      "entity_id": "licenses/TLIC-0112",
+      "label": "AU-R-000325",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000341",
+      "entity_id": "licenses/TLIC-0072",
+      "label": "AU-R-000341",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000343",
+      "entity_id": "licenses/TLIC-0173",
+      "label": "AU-R-000343",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000345",
+      "entity_id": "licenses/TLIC-0070",
+      "label": "AU-R-000345",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000352",
+      "entity_id": "licenses/TLIC-0121",
+      "label": "AU-R-000352",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000364",
+      "entity_id": "licenses/TLIC-0044",
+      "label": "AU-R-000364",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000369",
+      "entity_id": "licenses/TLIC-0165",
+      "label": "AU-R-000369",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000381",
+      "entity_id": "licenses/TLIC-0211",
+      "label": "AU-R-000381",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000391",
+      "entity_id": "licenses/TLIC-0124",
+      "label": "AU-R-000391",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000394",
+      "entity_id": "licenses/TLIC-0038",
+      "label": "AU-R-000394",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000400",
+      "entity_id": "licenses/TLIC-0166",
+      "label": "AU-R-000400",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000420",
+      "entity_id": "licenses/TLIC-0225",
+      "label": "AU-R-000420",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000421",
+      "entity_id": "licenses/TLIC-0134",
+      "label": "AU-R-000421",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000433",
+      "entity_id": "licenses/TLIC-0137",
+      "label": "AU-R-000433",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000434",
+      "entity_id": "licenses/TLIC-0065",
+      "label": "AU-R-000434",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000435",
+      "entity_id": "licenses/TLIC-0113",
+      "label": "AU-R-000435",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000459",
+      "entity_id": "licenses/TLIC-0205",
+      "label": "AU-R-000459",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000482",
+      "entity_id": "licenses/TLIC-0093",
+      "label": "AU-R-000482",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000485",
+      "entity_id": "licenses/TLIC-0071",
+      "label": "AU-R-000485",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000486",
+      "entity_id": "licenses/TLIC-0150",
+      "label": "AU-R-000486",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000497",
+      "entity_id": "licenses/TLIC-0151",
+      "label": "AU-R-000497",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000500",
+      "entity_id": "licenses/TLIC-0069",
+      "label": "AU-R-000500",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000507",
+      "entity_id": "licenses/TLIC-0210",
+      "label": "AU-R-000507",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000512",
+      "entity_id": "licenses/TLIC-0043",
+      "label": "AU-R-000512",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000521",
+      "entity_id": "licenses/TLIC-0035",
+      "label": "AU-R-000521",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000524",
+      "entity_id": "licenses/TLIC-0185",
+      "label": "AU-R-000524",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000535",
+      "entity_id": "licenses/TLIC-0169",
+      "label": "AU-R-000535",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000539",
+      "entity_id": "licenses/TLIC-0140",
+      "label": "AU-R-000539",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000547",
+      "entity_id": "licenses/TLIC-0182",
+      "label": "AU-R-000547",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000550",
+      "entity_id": "licenses/TLIC-0178",
+      "label": "AU-R-000550",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000551",
+      "entity_id": "licenses/TLIC-0083",
+      "label": "AU-R-000551",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000552",
+      "entity_id": "licenses/TLIC-0094",
+      "label": "AU-R-000552",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000556",
+      "entity_id": "licenses/TLIC-0062",
+      "label": "AU-R-000556",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000561",
+      "entity_id": "licenses/TLIC-0168",
+      "label": "AU-R-000561",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000568",
+      "entity_id": "licenses/TLIC-0198",
+      "label": "AU-R-000568",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000571",
+      "entity_id": "licenses/TLIC-0229",
+      "label": "AU-R-000571",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000584",
+      "entity_id": "licenses/TLIC-0187",
+      "label": "AU-R-000584",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000585",
+      "entity_id": "licenses/TLIC-0188",
+      "label": "AU-R-000585",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000587",
+      "entity_id": "licenses/TLIC-0202",
+      "label": "AU-R-000587",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000591",
+      "entity_id": "licenses/TLIC-0122",
+      "label": "AU-R-000591",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000595",
+      "entity_id": "licenses/TLIC-0179",
+      "label": "AU-R-000595",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000608",
+      "entity_id": "licenses/TLIC-0203",
+      "label": "AU-R-000608",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000610",
+      "entity_id": "licenses/TLIC-0130",
+      "label": "AU-R-000610",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000616",
+      "entity_id": "licenses/TLIC-0201",
+      "label": "AU-R-000616",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000617",
+      "entity_id": "licenses/TLIC-0041",
+      "label": "AU-R-000617",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000622",
+      "entity_id": "licenses/TLIC-0133",
+      "label": "AU-R-000622",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000624",
+      "entity_id": "licenses/TLIC-0108",
+      "label": "AU-R-000624",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000636",
+      "entity_id": "licenses/TLIC-0172",
+      "label": "AU-R-000636",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000641",
+      "entity_id": "licenses/TLIC-0163",
+      "label": "AU-R-000641",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000653",
+      "entity_id": "licenses/TLIC-0087",
+      "label": "AU-R-000653",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000655",
+      "entity_id": "licenses/TLIC-0152",
+      "label": "AU-R-000655",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000656",
+      "entity_id": "licenses/TLIC-0074",
+      "label": "AU-R-000656",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000658",
+      "entity_id": "licenses/TLIC-0154",
+      "label": "AU-R-000658",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000661",
+      "entity_id": "licenses/TLIC-0194",
+      "label": "AU-R-000661",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000665",
+      "entity_id": "licenses/TLIC-0220",
+      "label": "AU-R-000665",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000681",
+      "entity_id": "licenses/TLIC-0200",
+      "label": "AU-R-000681",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000682",
+      "entity_id": "licenses/TLIC-0135",
+      "label": "AU-R-000682",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000703",
+      "entity_id": "licenses/TLIC-0039",
+      "label": "AU-R-000703",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000707",
+      "entity_id": "licenses/TLIC-0064",
+      "label": "AU-R-000707",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000711",
+      "entity_id": "licenses/TLIC-0181",
+      "label": "AU-R-000711",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000716",
+      "entity_id": "licenses/TLIC-0081",
+      "label": "AU-R-000716",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000718",
+      "entity_id": "licenses/TLIC-0088",
+      "label": "AU-R-000718",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000726",
+      "entity_id": "licenses/TLIC-0184",
+      "label": "AU-R-000726",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000744",
+      "entity_id": "licenses/TLIC-0212",
+      "label": "AU-R-000744",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000753",
+      "entity_id": "licenses/TLIC-0219",
+      "label": "AU-R-000753",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000756",
+      "entity_id": "licenses/TLIC-0162",
+      "label": "AU-R-000756",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000762",
+      "entity_id": "licenses/TLIC-0036",
+      "label": "AU-R-000762",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000781",
+      "entity_id": "licenses/TLIC-0208",
+      "label": "AU-R-000781",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000782",
+      "entity_id": "licenses/TLIC-0156",
+      "label": "AU-R-000782",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000797",
+      "entity_id": "licenses/TLIC-0046",
+      "label": "AU-R-000797",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000801",
+      "entity_id": "licenses/TLIC-0106",
+      "label": "AU-R-000801",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000804",
+      "entity_id": "licenses/TLIC-0077",
+      "label": "AU-R-000804",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000805",
+      "entity_id": "licenses/TLIC-0111",
+      "label": "AU-R-000805",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000809",
+      "entity_id": "licenses/TLIC-0204",
+      "label": "AU-R-000809",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000812",
+      "entity_id": "licenses/TLIC-0159",
+      "label": "AU-R-000812",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000819",
+      "entity_id": "licenses/TLIC-0213",
+      "label": "AU-R-000819",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000824",
+      "entity_id": "licenses/TLIC-0095",
+      "label": "AU-R-000824",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000826",
+      "entity_id": "licenses/TLIC-0141",
+      "label": "AU-R-000826",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000831",
+      "entity_id": "licenses/TLIC-0125",
+      "label": "AU-R-000831",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000833",
+      "entity_id": "licenses/TLIC-0196",
+      "label": "AU-R-000833",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000834",
+      "entity_id": "licenses/TLIC-0155",
+      "label": "AU-R-000834",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000835",
+      "entity_id": "licenses/TLIC-0147",
+      "label": "AU-R-000835",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000842",
+      "entity_id": "licenses/TLIC-0099",
+      "label": "AU-R-000842",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000853",
+      "entity_id": "licenses/TLIC-0048",
+      "label": "AU-R-000853",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000859",
+      "entity_id": "licenses/TLIC-0040",
+      "label": "AU-R-000859",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000863",
+      "entity_id": "licenses/TLIC-0089",
+      "label": "AU-R-000863",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000870",
+      "entity_id": "licenses/TLIC-0132",
+      "label": "AU-R-000870",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000876",
+      "entity_id": "licenses/TLIC-0128",
+      "label": "AU-R-000876",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000887",
+      "entity_id": "licenses/TLIC-0076",
+      "label": "AU-R-000887",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000889",
+      "entity_id": "licenses/TLIC-0060",
+      "label": "AU-R-000889",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000894",
+      "entity_id": "licenses/TLIC-0126",
+      "label": "AU-R-000894",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000895",
+      "entity_id": "licenses/TLIC-0123",
+      "label": "AU-R-000895",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000896",
+      "entity_id": "licenses/TLIC-0129",
+      "label": "AU-R-000896",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000897",
+      "entity_id": "licenses/TLIC-0118",
+      "label": "AU-R-000897",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000904",
+      "entity_id": "licenses/TLIC-0148",
+      "label": "AU-R-000904",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000910",
+      "entity_id": "licenses/TLIC-0191",
+      "label": "AU-R-000910",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000911",
+      "entity_id": "licenses/TLIC-0175",
+      "label": "AU-R-000911",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000912",
+      "entity_id": "licenses/TLIC-0218",
+      "label": "AU-R-000912",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000917",
+      "entity_id": "licenses/TLIC-0157",
+      "label": "AU-R-000917",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000919",
+      "entity_id": "licenses/TLIC-0228",
+      "label": "AU-R-000919",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000922",
+      "entity_id": "licenses/TLIC-0186",
+      "label": "AU-R-000922",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000924",
+      "entity_id": "licenses/TLIC-0214",
+      "label": "AU-R-000924",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000927",
+      "entity_id": "licenses/TLIC-0131",
+      "label": "AU-R-000927",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000936",
+      "entity_id": "licenses/TLIC-0143",
+      "label": "AU-R-000936",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000940",
+      "entity_id": "licenses/TLIC-0047",
+      "label": "AU-R-000940",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000941",
+      "entity_id": "licenses/TLIC-0097",
+      "label": "AU-R-000941",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000945",
+      "entity_id": "licenses/TLIC-0221",
+      "label": "AU-R-000945",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000955",
+      "entity_id": "licenses/TLIC-0063",
+      "label": "AU-R-000955",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000956",
+      "entity_id": "licenses/TLIC-0050",
+      "label": "AU-R-000956",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000957",
+      "entity_id": "licenses/TLIC-0195",
+      "label": "AU-R-000957",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000958",
+      "entity_id": "licenses/TLIC-0127",
+      "label": "AU-R-000958",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000976",
+      "entity_id": "licenses/TLIC-0061",
+      "label": "AU-R-000976",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000980",
+      "entity_id": "licenses/TLIC-0067",
+      "label": "AU-R-000980",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000990",
+      "entity_id": "licenses/TLIC-0142",
+      "label": "AU-R-000990",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000993",
+      "entity_id": "licenses/TLIC-0117",
+      "label": "AU-R-000993",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-000999",
+      "entity_id": "licenses/TLIC-0066",
+      "label": "AU-R-000999",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001000",
+      "entity_id": "licenses/TLIC-0098",
+      "label": "AU-R-001000",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001002",
+      "entity_id": "licenses/TLIC-0068",
+      "label": "AU-R-001002",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001008",
+      "entity_id": "licenses/TLIC-0100",
+      "label": "AU-R-001008",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001010",
+      "entity_id": "licenses/TLIC-0082",
+      "label": "AU-R-001010",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001012",
+      "entity_id": "licenses/TLIC-0222",
+      "label": "AU-R-001012",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001022",
+      "entity_id": "licenses/TLIC-0149",
+      "label": "AU-R-001022",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001025",
+      "entity_id": "licenses/TLIC-0189",
+      "label": "AU-R-001025",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001028",
+      "entity_id": "licenses/TLIC-0224",
+      "label": "AU-R-001028",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001034",
+      "entity_id": "licenses/TLIC-0170",
+      "label": "AU-R-001034",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001049",
+      "entity_id": "licenses/TLIC-0139",
+      "label": "AU-R-001049",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001055",
+      "entity_id": "licenses/TLIC-0136",
+      "label": "AU-R-001055",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001059",
+      "entity_id": "licenses/TLIC-0176",
+      "label": "AU-R-001059",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001066",
+      "entity_id": "licenses/TLIC-0223",
+      "label": "AU-R-001066",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001069",
+      "entity_id": "licenses/TLIC-0206",
+      "label": "AU-R-001069",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001074",
+      "entity_id": "licenses/TLIC-0209",
+      "label": "AU-R-001074",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001077",
+      "entity_id": "licenses/TLIC-0171",
+      "label": "AU-R-001077",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001078",
+      "entity_id": "licenses/TLIC-0107",
+      "label": "AU-R-001078",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001079",
+      "entity_id": "licenses/TLIC-0116",
+      "label": "AU-R-001079",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001080",
+      "entity_id": "licenses/TLIC-0045",
+      "label": "AU-R-001080",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001089",
+      "entity_id": "licenses/TLIC-0144",
+      "label": "AU-R-001089",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001093",
+      "entity_id": "licenses/TLIC-0180",
+      "label": "AU-R-001093",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001096",
+      "entity_id": "licenses/TLIC-0101",
+      "label": "AU-R-001096",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001107",
+      "entity_id": "licenses/TLIC-0075",
+      "label": "AU-R-001107",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001114",
+      "entity_id": "licenses/TLIC-0084",
+      "label": "AU-R-001114",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001119",
+      "entity_id": "licenses/TLIC-0158",
+      "label": "AU-R-001119",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001143",
+      "entity_id": "licenses/TLIC-0051",
+      "label": "AU-R-001143",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001144",
+      "entity_id": "licenses/TLIC-0052",
+      "label": "AU-R-001144",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001147",
+      "entity_id": "licenses/TLIC-0053",
+      "label": "AU-R-001147",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001148",
+      "entity_id": "licenses/TLIC-0054",
+      "label": "AU-R-001148",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001149",
+      "entity_id": "licenses/TLIC-0055",
+      "label": "AU-R-001149",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001151",
+      "entity_id": "licenses/TLIC-0056",
+      "label": "AU-R-001151",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001152",
+      "entity_id": "licenses/TLIC-0057",
+      "label": "AU-R-001152",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001153",
+      "entity_id": "licenses/TLIC-0042",
+      "label": "AU-R-001153",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001183",
+      "entity_id": "licenses/TLIC-0058",
+      "label": "AU-R-001183",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-R-001228",
+      "entity_id": "licenses/TLIC-0059",
+      "label": "AU-R-001228",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-SC-000103",
+      "entity_id": "licenses/TLIC-0226",
+      "label": "AU-SC-000103",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-SC-000116",
+      "entity_id": "licenses/TLIC-0199",
+      "label": "AU-SC-000116",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:AU-SC-000133",
+      "entity_id": "licenses/TLIC-0145",
+      "label": "AU-SC-000133",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:PC-000009",
+      "entity_id": "licenses/TLIC-0104",
+      "label": "PC-000009",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:PC-000137",
+      "entity_id": "licenses/TLIC-0174",
+      "label": "PC-000137",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:PC-000205",
+      "entity_id": "licenses/TLIC-0034",
+      "label": "PC-000205",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:PC-000226",
+      "entity_id": "licenses/TLIC-0197",
+      "label": "PC-000226",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:PC-000763",
+      "entity_id": "licenses/TLIC-0103",
+      "label": "PC-000763",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:PC-000873",
+      "entity_id": "licenses/TLIC-0164",
+      "label": "PC-000873",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "license",
+      "natural_key": "MI:lic:overview",
+      "entity_id": "licenses/TLIC-0230",
+      "label": "Michigan Licensing Overview",
+      "collection": "licenses"
+    },
+    {
+      "entity_type": "reference",
+      "natural_key": "MI:ref:privacy-spec",
+      "entity_id": "reference/TREF-0007",
+      "label": "Michigan Ingestion: Privacy and Excluded-Field Specification",
+      "collection": "reference"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:batch_definition",
+      "entity_id": "requirements/TREQ-0016",
+      "label": "Batch Definition",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:foreign_matter",
+      "entity_id": "requirements/TREQ-0012",
+      "label": "Foreign Matter Inspection",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:heavy_metals",
+      "entity_id": "requirements/TREQ-0009",
+      "label": "Heavy Metals",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:homogeneity",
+      "entity_id": "requirements/TREQ-0015",
+      "label": "Sample Homogeneity",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:microbials",
+      "entity_id": "requirements/TREQ-0010",
+      "label": "Microbial Testing",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:moisture",
+      "entity_id": "requirements/TREQ-0006",
+      "label": "Moisture Content / Water Activity",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:mycotoxins",
+      "entity_id": "requirements/TREQ-0011",
+      "label": "Mycotoxin Testing",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:pesticides",
+      "entity_id": "requirements/TREQ-0008",
+      "label": "Pesticide Screening",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:potency",
+      "entity_id": "requirements/TREQ-0004",
+      "label": "Potency / Cannabinoid Testing",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:remediation",
+      "entity_id": "requirements/TREQ-0014",
+      "label": "Remediation and Retesting",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:residual_solvents",
+      "entity_id": "requirements/TREQ-0007",
+      "label": "Residual Solvents",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:terpenes",
+      "entity_id": "requirements/TREQ-0005",
+      "label": "Terpene Testing",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "requirement",
+      "natural_key": "MI:req:vitamin_e_acetate",
+      "entity_id": "requirements/TREQ-0013",
+      "label": "Vitamin E Acetate",
+      "collection": "requirements"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "MI:recall:exclusive-brands",
+      "entity_id": "safety-advisories/TSAD-0014",
+      "label": "Exclusive Brands Recall Bulletin",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "MI:recall:flavor-galaxy",
+      "entity_id": "safety-advisories/TSAD-0015",
+      "label": "Flavor Galaxy Recall Bulletin",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "MI:lab:ACT Laboratories, Inc.",
+      "entity_id": "testing-laboratories/TSTL-0042",
+      "label": "ACT Laboratories",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "MI:lab:Cambium Analytica, LLC",
+      "entity_id": "testing-laboratories/TSTL-0046",
+      "label": "Cambium Analytica",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "MI:lab:Candid Testing, LLC",
+      "entity_id": "testing-laboratories/TSTL-0045",
+      "label": "Candid Testing",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "MI:lab:Iron Laboratories, LLC",
+      "entity_id": "testing-laboratories/TSTL-0040",
+      "label": "Iron Labs",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "MI:lab:North Coast Testing Laboratories, LLC",
+      "entity_id": "testing-laboratories/TSTL-0043",
+      "label": "North Coast Testing Labs",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "MI:lab:PSI Labs, LLC",
+      "entity_id": "testing-laboratories/TSTL-0041",
+      "label": "PSI Labs",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "MI:lab:Steadfast Labs, LLC",
+      "entity_id": "testing-laboratories/TSTL-0044",
+      "label": "Steadfast Labs",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "MI:lab:Viridis Laboratories, LLC",
+      "entity_id": "testing-laboratories/TSTL-0047",
+      "label": "Viridis Laboratories",
+      "collection": "testing-laboratories"
+    }
+  ],
+  "digest": "67a843c560f706685a4f2efc2c82f25778205aa6253b7c149ffa70dab2e01c71"
+}

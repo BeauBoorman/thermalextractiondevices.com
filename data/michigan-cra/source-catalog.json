@@ -1,0 +1,46 @@
+{
+  "regulator": {
+    "slug": "michigan-cra",
+    "name": "Michigan Cannabis Regulatory Agency",
+    "jurisdiction": "Michigan",
+    "jurisdiction_code": "MI",
+    "site": "https://www.michigan.gov/cra",
+    "license_lookup": "https://www.michigan.gov/cra/verify-a-license-1",
+    "recalls_url": "https://www.michigan.gov/cra/sections/enforcement-division/recalls",
+    "monthly_reports_url": "https://www.michigan.gov/cra/resources/statistical-reports",
+    "lab_guidance_url": "https://www.michigan.gov/cra/-/media/Project/Websites/cra/Resources-and-Publications/Guides-and-Manuals/Technical-Guidance-for-Laboratories-Version-5-2---September-2024.pdf",
+    "rules_url": "https://www.michigan.gov/cra/sections/laws-and-rules/laws-and-rules",
+    "data_catalog_note": "Michigan does not publish a structured open-data catalog. The CRA Data.pdf product registry (Metrc snapshot, ~May 2024) and monthly statistical report PDFs are the primary public data surfaces."
+  },
+  "disclaimer": "Data is derived from official CRA sources (public PDFs, bulletins). CSV extracts are machine-generated from PDF source documents and may contain OCR or column-alignment artifacts. Always consult the original PDF for regulatory decisions.",
+  "mode": "offline-first (committed PDF extracts; no live endpoints)",
+  "datasets": [
+    {
+      "slug": "facilities",
+      "title": "Michigan CRA Licensed Facilities (Facility-Product Registry Extract)",
+      "url": "https://www.michigan.gov/cra/verify-a-license-1",
+      "format": "CSV (extracted from PDF)",
+      "reporting_period": "~2024-05-09 (PDF metadata)",
+      "row_count_note": "196 facilities",
+      "description": "Facility-level extract from the CRA Data.pdf product registry (Metrc package snapshot, ~May 2024). One row per licensed facility; includes product count, municipality, and license number. License type/program is derived from the license-number prefix."
+    },
+    {
+      "slug": "product_registry",
+      "title": "Michigan CRA Product Registry (Metrc Package Snapshot)",
+      "url": "https://www.michigan.gov/cra/verify-a-license-1",
+      "format": "CSV (extracted from PDF)",
+      "reporting_period": "~2024-05-09 (PDF metadata)",
+      "row_count_note": "6,546 product rows",
+      "description": "Product-level extract from the CRA Data.pdf. One row per Metrc-tagged product; includes facility, municipality, Metrc tag, product name, and product category. Approximately 6,546 products across 196 facilities."
+    },
+    {
+      "slug": "monthly_report",
+      "title": "Michigan CRA Monthly Statistical Report (February 2026)",
+      "url": "https://www.michigan.gov/cra/resources/statistical-reports",
+      "format": "Text (extracted from PDF)",
+      "reporting_period": "February 2026",
+      "row_count_note": "~2,425 lines of extracted text",
+      "description": "Official CRA monthly report with aggregate license counts by type, sales figures, and market statistics. PDF; text extracted via pdftotext."
+    }
+  ]
+}
