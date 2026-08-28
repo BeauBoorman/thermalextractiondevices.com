@@ -1,0 +1,32 @@
+{
+  "regulator": {
+    "slug": "nevada-ccb",
+    "name": "Nevada Cannabis Compliance Board",
+    "jurisdiction": "Nevada",
+    "jurisdiction_code": "NV",
+    "site": "https://ccb.nv.gov/",
+    "lab_library": "https://ccb.nv.gov/lab-library/",
+    "advisories_api": "https://ccb.nv.gov/wp-json/wp/v2/posts?search=bulletin&per_page=100"
+  },
+  "disclaimer": "Lab results are reported by licensed independent testing laboratories to the Nevada Cannabis Compliance Board through the state traceability system and published as-is. The Board does not guarantee completeness or accuracy of individual results. A single result implies nothing about consumer safety without the applicable requirement, unit, matrix, and action limit.",
+  "datasets": [
+    {
+      "slug": "lab_library_2026_06",
+      "title": "CCB Lab Library — June 2026 Monthly Extract",
+      "url": "https://ccbdownload.wpenginepowered.com/wp-content/uploads/2026/04/June%202026.zip",
+      "format": "zip",
+      "reporting_period": "2026-06-01 .. 2026-06-30",
+      "source_last_updated": "2026-07-14 (ZIP entry timestamps)",
+      "description": "Per-batch Metrc laboratory testing extract: two half-month TSV payloads (UTF-16 LE), one row per (sample, analyte) test detail. Cannabinoids, terpenes, pesticides, heavy metals, mycotoxins, microbial, moisture, water activity. 9,228 packages in June 2026."
+    },
+    {
+      "slug": "safety_bulletins",
+      "title": "CCB Public Health and Safety Bulletins (WP-JSON)",
+      "url": "https://ccb.nv.gov/wp-json/wp/v2/posts?search=bulletin&per_page=100",
+      "format": "json",
+      "reporting_period": "2020-11 .. present",
+      "source_last_updated": "as issued by the Board",
+      "description": "Machine-readable advisory posts from the CCB WordPress REST API: bulletin id/date/title, affected items (product, batch/lot), retail locations, consumer guidance, and the CDC/agency links the Board cites. Street addresses inside retail-location lines are excluded from generated pages."
+    }
+  ]
+}

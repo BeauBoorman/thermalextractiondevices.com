@@ -1,44 +1,46 @@
 {
-  "version": 1,
-  "entity_id_format": "<collection>/<FORM-ID>",
-  "form_id_format": "uppercase hyphen-separated tokens containing at least one zero-padded four-digit numeric token",
-  "examples": [
-    "devices/TED-0001",
-    "specs/TSPEC-0001",
-    "safety/TSAFE-0001",
-    "reference/TREF-0001",
-    "guides/TGDE-0001",
-    "releases/TREL-0001",
-    "changelog/TCHG-0001"
-  ],
-  "trunks": "Collection landing pages keep their collection IDs and have no parent.",
-  "satellites": "Content records keep their collection as the structural parent; semantic relationships are separate Boris relations.",
-  "allocation": "Existing form codes are preserved when possible, numeric segments are normalized to four digits, and missing form IDs are allocated from the next unused collection prefix after global content and durable state-map reservations.",
-  "immutability": "IDs are never silently renumbered or reused. The migration map records the prior slug-derived identity.",
-  "migration_map": "metadata/id-map.jsonl",
-  "allocation_authority": {
-    "global_editorial": {
-      "canonical_source": "content frontmatter IDs",
-      "migration_map": "metadata/id-map.jsonl",
-      "allocator": "scripts/ted_ids.py"
-    },
-    "state_ingest": {
-      "canonical_source": "data/<state>-ccc/id-map.json natural-key mappings plus generated content",
-      "registry": "scripts/ingest/ids.py",
-      "role": "durable reuse history and reservation claims; not a second ID namespace"
-    },
-    "shared_collections": true
+ "version": 1,
+ "entity_id_format": "<collection>/<FORM-ID>",
+ "form_id_format": "uppercase hyphen-separated tokens containing at least one zero-padded four-digit numeric token",
+ "examples": [
+  "devices/TED-0001",
+  "specs/TSPEC-0001",
+  "safety/TSAFE-0001",
+  "reference/TREF-0001",
+  "guides/TGDE-0001",
+  "releases/TREL-0001",
+  "changelog/TCHG-0001"
+ ],
+ "trunks": "Collection landing pages keep their collection IDs and have no parent.",
+ "satellites": "Content records keep their collection as the structural parent; semantic relationships are separate Boris relations.",
+ "allocation": "Existing form codes are preserved when possible, numeric segments are normalized to four digits, and missing form IDs are allocated from the next unused collection prefix after global content and durable state-map reservations.",
+ "immutability": "IDs are never silently renumbered or reused. The migration map records the prior slug-derived identity.",
+ "migration_map": "metadata/id-map.jsonl",
+ "allocation_authority": {
+  "global_editorial": {
+   "canonical_source": "content frontmatter IDs",
+   "migration_map": "metadata/id-map.jsonl",
+   "allocator": "scripts/ted_ids.py"
   },
-  "state_maps": [
-    "data/massachusetts-ccc/id-map.json"
-  ],
-  "state_map_globs": [
-    "data/*-ccc/id-map.json"
-  ],
-  "reservation": {
-    "lock_path": ".git/ted-id-allocation.lock",
-    "mechanism": "exclusive process lock around preflight, complete state allocation, and postflight",
-    "macos_command": "lockf -k -t 0",
-    "collision_guard": "scripts/ted_ids.py --all-state-maps"
-  }
+  "state_ingest": {
+   "canonical_source": "data/<state>-ccc/id-map.json natural-key mappings plus generated content",
+   "registry": "scripts/ingest/ids.py",
+   "role": "durable reuse history and reservation claims; not a second ID namespace"
+  },
+  "shared_collections": true
+ },
+ "state_maps": [
+  "data/massachusetts-ccc/id-map.json",
+  "data/nevada-ccb/id-map.json"
+ ],
+ "state_map_globs": [
+  "data/*-ccc/id-map.json",
+  "data/*-ccb/id-map.json"
+ ],
+ "reservation": {
+  "lock_path": ".git/ted-id-allocation.lock",
+  "mechanism": "exclusive process lock around preflight, complete state allocation, and postflight",
+  "macos_command": "lockf -k -t 0",
+  "collision_guard": "scripts/ted_ids.py --all-state-maps"
+ }
 }

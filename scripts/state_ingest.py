@@ -52,12 +52,18 @@ GENERATED_COLLECTIONS = [
 ]
 
 
+_ADAPTERS = {
+    "massachusetts": ("scripts.ingest.states", "massachusetts"),
+    "nevada": ("scripts.ingest.states", "nevada"),
+}
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="state_ingest.py",
         description="Ingest state-backed cannabis data into the Boris archive.",
     )
-    parser.add_argument("state", choices=["massachusetts"], help="State adapter to run")
+    parser.add_argument("state", choices=sorted(_ADAPTERS), help="State adapter to run")
     parser.add_argument("--refresh", action="store_true",
                         help="Re-download datasets even when snapshots match")
     parser.add_argument("--dataset", action="append", dest="datasets", default=None,
@@ -96,7 +102,8 @@ def main() -> int:
     state = args.state
 
     try:
-        from scripts.ingest.states import massachusetts as ma
+        module_name, attr = _ADAPTERS[state]
+        adapter = __import__(f"{module_name}.{attr}", fromlist=[attr])
     except ImportError as error:  # pragma: no cover
         print(f"state_ingest: cannot load {state} adapter: {error}", file=sys.stderr)
         return 2
@@ -114,15 +121,16 @@ def main() -> int:
 
     store = _new_store(args, state)
     registry_path = store.durable_root / "id-map.json"
-    registry = NaturalKeyRegistry(registry_path, ma.ID_PREFIXES, ma.ID_COLLECTIONS)
+    registry = NaturalKeyRegistry(registry_path, adapter.ID_PREFIXES,
+                                  adapter.ID_COLLECTIONS)
     if not args.fixtures_only:
-        # Massachusetts shares the canonical collections with California and
-        # editorial content. Seed the allocator from the combined content tree
-        # so newly allocated IDs never collide with existing entities.
+        # State adapters share the canonical collections with California and
+        # editorial content. Seed the allocator from the combined content
+        # tree so newly allocated IDs never collide with existing entities.
         registry.seed_from_entity_ids(collect_entity_ids(ROOT / "content"))
 
     if args.report_only:
-        return _report_only(args, store, ma)
+        return _report_only(args, store, adapter)
 
     fetcher: object
     if args.fixtures_only:
@@ -131,11 +139,11 @@ def main() -> int:
     else:
         fetcher = Fetcher()
 
-    datasets = args.datasets or list(ma.DATASETS.keys())
+    datasets = args.datasets or list(adapter.DATASETS.keys())
     for requested in args.datasets or []:
-        if requested not in ma.DATASETS:
+        if requested not in adapter.DATASETS:
             print(f"state_ingest: unknown dataset {requested!r}; "
-                  f"known: {', '.join(sorted(ma.DATASETS))}", file=sys.stderr)
+                  f"known: {', '.join(sorted(adapter.DATASETS))}", file=sys.stderr)
             return 2
 
     # Dev-flag output is routed to an isolated, gitignored demo directory so
@@ -148,7 +156,10 @@ def main() -> int:
     else:
         content_root = ROOT / "content"
 
-    sync = ma.MassachusettsSync(
+    sync_class = getattr(adapter, "StateSync", None)
+    if sync_class is None:  # Massachusetts keeps its historical class name
+        sync_class = adapter.MassachusettsSync
+    sync = sync_class(
         fetch=fetcher, store=store, registry=registry,
         content_root=content_root, datasets=datasets,
         refresh=args.refresh, fixtures_only=args.fixtures_only,
@@ -159,9 +170,12 @@ def main() -> int:
     for slug in datasets:
         sync.run_dataset(slug, report)
 
-    advisories = sync.discover_advisories() if not args.skip_content else []
     if not args.skip_content:
-        sync.generate_content(report, advisories)
+        if state == "massachusetts":
+            advisories = sync.discover_advisories()
+            sync.generate_content(report, advisories)
+        else:
+            sync.generate_content(report)
 
     # Publication gates (fail without publishing on any error).
     errors = []
@@ -185,24 +199,28 @@ def main() -> int:
 
 def _publish_gates(store, report, *, quiet: bool) -> list[str]:
     """Privacy scan, relation targets, ID validation, Markdown links, Boris gate."""
-    from scripts.ingest.states.massachusetts import PRIVACY_SPEC
+    import scripts.ingest.states.massachusetts as _ma_adapter
+    import scripts.ingest.states.nevada as _nv_adapter
     from scripts.ingest.validation import PrivacyViolationError
 
     errors: list[str] = []
     content = ROOT / "content"
 
     # The privacy gate validates only the pages this run generated (plus the
-    # Massachusetts-created trunk pages), never other states' or workstreams'
+    # state-created trunk pages), never other states' or workstreams'
     # content. Whole-collection scanning would wrongly fail on unrelated
     # content (e.g. jurisdiction scaffold prose like "2018 Constitutional
-    # Court" or legal citations) that Massachusetts does not publish.
-    ma_trunks = {"safety-advisories.md", "affected-products.md"}
-    ma_paths = {p for p in report.pages_generated if p.endswith(".md")} | ma_trunks
+    # Court" or legal citations) that this state does not publish.
+    privacy_spec = (_nv_adapter.PRIVACY_SPEC if report.state == "nevada"
+                    else _ma_adapter.PRIVACY_SPEC)
+    state_trunks = ({"safety-advisories.md", "affected-products.md"}
+                    if report.state == "massachusetts" else set())
+    state_paths = {p for p in report.pages_generated if p.endswith(".md")} | state_trunks
     # The reference/ privacy-spec page is generated by this pipeline but
     # deliberately names excluded source fields ("EIN_TIN", "BUSINESS_EMAIL")
     # as policy examples; the field-marker scan must not flag the spec itself.
-    ma_paths = {p for p in ma_paths if not p.startswith("reference/")}
-    findings = scan_directory(content, PRIVACY_SPEC, only_paths=ma_paths or None)
+    state_paths = {p for p in state_paths if not p.startswith("reference/")}
+    findings = scan_directory(content, privacy_spec, only_paths=state_paths or None)
     if findings:
         errors.append(f"privacy scan: {len(findings)} finding(s); first: {findings[0]}")
         for finding in findings[:5]:

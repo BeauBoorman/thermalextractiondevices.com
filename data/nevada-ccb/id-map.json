@@ -1,0 +1,350 @@
+{
+  "version": 1,
+  "state": null,
+  "mappings": [
+    {
+      "entity_type": "dataset",
+      "natural_key": "NV:dataset:lab_library_2026_06",
+      "entity_id": "datasets/TDTS-0028",
+      "label": "CCB Lab Library — June 2026 Monthly Extract",
+      "collection": "datasets"
+    },
+    {
+      "entity_type": "dataset",
+      "natural_key": "NV:dataset:safety_bulletins",
+      "entity_id": "datasets/TDTS-0029",
+      "label": "CCB Public Health and Safety Bulletins (WP-JSON)",
+      "collection": "datasets"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10763062:2026-06-18",
+      "entity_id": "lab-results/TLAB-0003",
+      "label": "nv-ccb:10763062:2026-06-18",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10763074:2026-06-18",
+      "entity_id": "lab-results/TLAB-0004",
+      "label": "nv-ccb:10763074:2026-06-18",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10763079:2026-06-18",
+      "entity_id": "lab-results/TLAB-0005",
+      "label": "nv-ccb:10763079:2026-06-18",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10805045:2026-06-09",
+      "entity_id": "lab-results/TLAB-0006",
+      "label": "nv-ccb:10805045:2026-06-09",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925799:2026-06-01",
+      "entity_id": "lab-results/TLAB-0007",
+      "label": "nv-ccb:10925799:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925800:2026-06-01",
+      "entity_id": "lab-results/TLAB-0008",
+      "label": "nv-ccb:10925800:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925926:2026-06-01",
+      "entity_id": "lab-results/TLAB-0009",
+      "label": "nv-ccb:10925926:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925927:2026-06-01",
+      "entity_id": "lab-results/TLAB-0010",
+      "label": "nv-ccb:10925927:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925928:2026-06-01",
+      "entity_id": "lab-results/TLAB-0011",
+      "label": "nv-ccb:10925928:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925981:2026-06-01",
+      "entity_id": "lab-results/TLAB-0012",
+      "label": "nv-ccb:10925981:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925982:2026-06-01",
+      "entity_id": "lab-results/TLAB-0013",
+      "label": "nv-ccb:10925982:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925983:2026-06-01",
+      "entity_id": "lab-results/TLAB-0014",
+      "label": "nv-ccb:10925983:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925984:2026-06-01",
+      "entity_id": "lab-results/TLAB-0015",
+      "label": "nv-ccb:10925984:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925985:2026-06-01",
+      "entity_id": "lab-results/TLAB-0016",
+      "label": "nv-ccb:10925985:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10925986:2026-06-01",
+      "entity_id": "lab-results/TLAB-0017",
+      "label": "nv-ccb:10925986:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10926001:2026-06-01",
+      "entity_id": "lab-results/TLAB-0018",
+      "label": "nv-ccb:10926001:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10926002:2026-06-01",
+      "entity_id": "lab-results/TLAB-0019",
+      "label": "nv-ccb:10926002:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10926035:2026-06-01",
+      "entity_id": "lab-results/TLAB-0020",
+      "label": "nv-ccb:10926035:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10926036:2026-06-01",
+      "entity_id": "lab-results/TLAB-0021",
+      "label": "nv-ccb:10926036:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10926037:2026-06-01",
+      "entity_id": "lab-results/TLAB-0022",
+      "label": "nv-ccb:10926037:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10926126:2026-06-01",
+      "entity_id": "lab-results/TLAB-0023",
+      "label": "nv-ccb:10926126:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10926127:2026-06-01",
+      "entity_id": "lab-results/TLAB-0024",
+      "label": "nv-ccb:10926127:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10926128:2026-06-01",
+      "entity_id": "lab-results/TLAB-0025",
+      "label": "nv-ccb:10926128:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10926129:2026-06-01",
+      "entity_id": "lab-results/TLAB-0026",
+      "label": "nv-ccb:10926129:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "lab_report",
+      "natural_key": "nv-ccb:10937192:2026-06-01",
+      "entity_id": "lab-results/TLAB-0027",
+      "label": "nv-ccb:10937192:2026-06-01",
+      "collection": "lab-results"
+    },
+    {
+      "entity_type": "organization",
+      "natural_key": "NV:org:DB PROCESSING LLC",
+      "entity_id": "organizations/TORG-0071",
+      "label": "DB PROCESSING LLC",
+      "collection": "organizations"
+    },
+    {
+      "entity_type": "organization",
+      "natural_key": "NV:org:GTI NEVADA LLC",
+      "entity_id": "organizations/TORG-0070",
+      "label": "GTI NEVADA LLC",
+      "collection": "organizations"
+    },
+    {
+      "entity_type": "organization",
+      "natural_key": "NV:org:NULEAF RENO PRODUCTION LLC",
+      "entity_id": "organizations/TORG-0069",
+      "label": "NULEAF RENO PRODUCTION LLC",
+      "collection": "organizations"
+    },
+    {
+      "entity_type": "reference",
+      "natural_key": "NV:ref:privacy-spec",
+      "entity_id": "reference/TREF-0006",
+      "label": "Nevada Ingestion: Privacy and Excluded-Field Specification",
+      "collection": "reference"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:2649",
+      "entity_id": "safety-advisories/TSAD-0013",
+      "label": "CCB Among Founding Members of Cannabis Regulators Association",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:2955",
+      "entity_id": "safety-advisories/TSAD-0012",
+      "label": "Public Health and Safety Bulletin – 2021-01",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:3176",
+      "entity_id": "safety-advisories/TSAD-0011",
+      "label": "Public Health & Safety Bulletin 2021-2",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:3177",
+      "entity_id": "safety-advisories/TSAD-0010",
+      "label": "CCB Issues Summary Suspension of Production License",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:3296",
+      "entity_id": "safety-advisories/TSAD-0009",
+      "label": "Public Health and Safety Bulletin 2022-01",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:3298",
+      "entity_id": "safety-advisories/TSAD-0008",
+      "label": "CCB Issues Summary Suspension of Cultivation/Production Licenses",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:3341",
+      "entity_id": "safety-advisories/TSAD-0007",
+      "label": "Public Health & Safety Bulletin 2022-02",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:3757",
+      "entity_id": "safety-advisories/TSAD-0006",
+      "label": "CCB Issues Public Health and Safety Bulletin 2023-01",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:3826",
+      "entity_id": "safety-advisories/TSAD-0005",
+      "label": "CCB Issues Public Health and Safety Bulletin 2023-02",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "safety_advisory",
+      "natural_key": "NV:adv:3868",
+      "entity_id": "safety-advisories/TSAD-0004",
+      "label": "CCB Issues Public Health and Safety Bulletin 2023-03",
+      "collection": "safety-advisories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "NV:lab:374 LABS LLC",
+      "entity_id": "testing-laboratories/TSTL-0032",
+      "label": "374 LABS LLC",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "NV:lab:DB LABS LLC",
+      "entity_id": "testing-laboratories/TSTL-0033",
+      "label": "DB LABS LLC",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "NV:lab:DPL NV LLC",
+      "entity_id": "testing-laboratories/TSTL-0034",
+      "label": "DPL NV LLC",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "NV:lab:ERP LLC",
+      "entity_id": "testing-laboratories/TSTL-0035",
+      "label": "ERP LLC",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "NV:lab:G3 LABS LLC",
+      "entity_id": "testing-laboratories/TSTL-0036",
+      "label": "G3 LABS LLC",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "NV:lab:LETTUCETEST LLC",
+      "entity_id": "testing-laboratories/TSTL-0037",
+      "label": "LETTUCETEST LLC",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "NV:lab:MA & ASSOCIATES LLC",
+      "entity_id": "testing-laboratories/TSTL-0038",
+      "label": "MA & ASSOCIATES LLC",
+      "collection": "testing-laboratories"
+    },
+    {
+      "entity_type": "testing_laboratory",
+      "natural_key": "NV:lab:NV CANN LABS LLC",
+      "entity_id": "testing-laboratories/TSTL-0039",
+      "label": "NV CANN LABS LLC",
+      "collection": "testing-laboratories"
+    }
+  ],
+  "digest": "e6e293f5a9ccad0f5130c0ffa7e0e1579899cd7c11dc8bf62b8f5027ecd0668d"
+}

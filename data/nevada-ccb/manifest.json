@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "state": "nevada",
+  "datasets": {
+    "lab_library_2026_06": [
+      {
+        "slug": "lab_library_2026_06",
+        "official_source_url": "https://ccbdownload.wpenginepowered.com/wp-content/uploads/2026/04/June%202026.zip",
+        "retrieval_timestamp": "2026-08-28T19:28:02Z",
+        "reporting_period": "2026-06-01 .. 2026-06-30",
+        "source_last_updated": "Wed, 15 Jul 2026 12:20:57 GMT",
+        "http_content_type": "application/zip",
+        "file_size_bytes": 6262370,
+        "raw_sha256": "bf85d60a29b9e347ec22976a3fd48492865e4f312e2b8bff4d71bafd1ca6688e",
+        "normalized_sha256": "f986bad746ac54ab65f7dbbd07d43e3b20d385fed8ec5ea6ba8fa8f09e9882d9",
+        "row_count": 569766,
+        "column_schema": [
+          "Packaged By Facility Name",
+          "Testing Facility Name",
+          "Test Performed Date",
+          "PackageLabSampleId",
+          "Overall Passed",
+          "Is Finished",
+          "Contains Remediated Product",
+          "Product Category Type Name",
+          "Product Name",
+          "PackageLabel",
+          "Quantity",
+          "Unit Of Measure Abbreviation",
+          "Test Type Name",
+          "Test Passed",
+          "Lab Test Detail Id",
+          "Test Result Level"
+        ],
+        "importer_version": "state_ingest-0.1",
+        "normalization_schema_version": "1",
+        "artifact_location": "var/ingest/nevada-ccc/raw/lab_library_2026_06/bf85d60a29b9e347ec22976a3fd48492865e4f312e2b8bff4d71bafd1ca6688e.zip",
+        "source_disclaimer": "Lab results are reported by licensed independent testing laboratories to the Nevada Cannabis Compliance Board through the state traceability system and published as-is. The Board does not guarantee completeness or accuracy of individual results. A single result implies nothing about consumer safety without the applicable requirement, unit, matrix, and action limit.",
+        "source_clarification_or_correction": "",
+        "prior_snapshot_checksum": null,
+        "max_reported_date": "2026-06-30"
+      }
+    ]
+  },
+  "updated_at": "2026-08-28T19:28:03Z"
+}

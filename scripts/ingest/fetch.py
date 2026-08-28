@@ -80,6 +80,19 @@ class Fetcher:
         self.allow_html = allow_html
         self.progress = progress
 
+    def with_accepted_types(self, *types: str) -> "Fetcher":
+        """Return a copy of this fetcher accepting additional content types.
+
+        State adapters with non-tabular official payloads (e.g. Nevada's
+        lab-library ZIP archives) extend the guard instead of bypassing it.
+        """
+        return Fetcher(
+            retries=self.retries, backoff_seconds=self.backoff,
+            timeout=self.timeout, user_agent=self.user_agent,
+            accepted_types=tuple(dict.fromkeys(self.accepted_types + tuple(types))),
+            allow_html=self.allow_html, progress=self.progress,
+        )
+
     def _open(self, url: str):
         request = urllib.request.Request(url, headers={"User-Agent": self.user_agent})
         return urllib.request.urlopen(request, timeout=self.timeout)
