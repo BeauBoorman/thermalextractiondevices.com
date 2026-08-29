@@ -298,13 +298,16 @@ def sniff_encoding_and_delimiter(data: bytes) -> tuple:
     return "utf-8", ","
 
 
-def iter_lab_rows(zip_path: Path) -> Iterator[dict]:
+def iter_lab_rows(zip_path: Path, *, max_uncompressed_bytes: int = 2 << 30) -> Iterator[dict]:
     """Stream rows from every CSV member of a CCB monthly ZIP.
 
     Values are stripped; empty strings become ``None``. Raises
-    :class:`IngestError` on decode failure or an empty archive. The
-    ``_csv_member`` provenance field records which half-month payload each
-    row came from.
+    :class:`IngestError` on decode failure, an empty archive, or a member
+    whose decompressed size exceeds ``max_uncompressed_bytes`` (zip-bomb
+    guard; the real June 2026 extract decompresses to ~110 MB per member,
+    so the 2 GiB default leaves two orders of magnitude of headroom).
+    The ``_csv_member`` provenance field records which half-month payload
+    each row came from.
     """
     try:
         archive = zipfile.ZipFile(zip_path)
@@ -315,6 +318,13 @@ def iter_lab_rows(zip_path: Path) -> Iterator[dict]:
         if not names:
             raise IngestError(f"{zip_path}: no CSV payload inside lab-library ZIP")
         for name in sorted(names):
+            info = archive.getinfo(name)
+            if info.file_size > max_uncompressed_bytes:
+                raise IngestError(
+                    f"{zip_path}#{name}: decompressed size {info.file_size:,} bytes "
+                    f"exceeds the {max_uncompressed_bytes:,}-byte cap; refusing "
+                    "to inflate (zip-bomb guard)"
+                )
             data = archive.read(name)
             encoding, delimiter = sniff_encoding_and_delimiter(data)
             try:
@@ -399,6 +409,12 @@ def normalize_lab_row(row: dict) -> dict:
         "package_label": _clean(row.get("PackageLabel")),
         "quantity": _clean(row.get("Quantity")),
         "quantity_numeric": _num(row.get("Quantity")),
+        "quantity_note": (
+            "source prints Quantity=0 (metrc zero-quantity convention for "
+            "non-inventoried samples); preserved verbatim, never treated as "
+            "missing"
+            if _num(row.get("Quantity")) == 0.0 else ""
+        ),
         "uom": _clean(row.get("Unit Of Measure Abbreviation")),
         "test_type_name": _clean(row.get("Test Type Name")),
         "test_type": parsed["test_type"],
@@ -490,15 +506,20 @@ def _parse_item_tables(html_markup: str) -> list:
     return items
 
 
-def _parse_retail_locations(html_markup: str, text: str) -> list:
-    """Extract retail facilities: (facility, dba, city, license number).
+def _parse_retail_locations(html_markup: str, text: str) -> tuple:
+    """Extract retail facilities: ``(rows, warnings)``.
 
     Retail entries are list items of the form ``LEGAL NAME LLC dba Trade
     Name City (License #: N…), street address, City, NV ZIP``. Only the
     facility name, city, and license number are kept — the street address
-    is never captured.
+    is never captured. Address cuts are digit-anchored (a house number must
+    precede the street suffix) so business names like "Circle S Farms"
+    are never mistaken for addresses. Any license line whose facility name
+    is consumed by cutting is returned as a loud warning, never silently
+    dropped (gate M2).
     """
     retail: list = []
+    retail_warnings: list = []
     seen: set = set()
     entries: list = []
     # Prefer structured list items; fall back to license-bearing fragments
@@ -509,11 +530,28 @@ def _parse_retail_locations(html_markup: str, text: str) -> list:
         for match in re.finditer(r"[^.]*?\(License\s*#\s*:?\s*[0-9 ]+\)[^.]*\.", text):
             entries.append(match.group(0))
     for entry in entries:
-        license_match = re.search(r"\(License\s*#\s*:?\s*([0-9 ]+)\)", entry)
+        # Retail license tokens come in two shapes and either case:
+        # labeled "(License #: N…)" / "(license # N…)" and bare trailing
+        # "(N…)" / "(TRN…)" tokens (verified: bulletin 2021-2 uses lowercase
+        # "license #", bulletin 2022-01 carries unlabeled tokens, and its
+        # NuWu line has no license at all). A license-less line that still
+        # looks like a retail address line ships with an empty license and
+        # a loud warning — never a silent drop (gate M2 class).
+        license_match = re.search(
+            r"\(license\s*#\s*:?\s*([0-9 ]+)\)|\(([A-Z]{0,2}\d{15,})\)",
+            entry, re.IGNORECASE)
+        looks_like_retail = bool(re.search(r",\s*[A-Z][A-Za-z .'-]+?,?\s+NV\s+\d{5}", entry))
         if not license_match:
-            continue
-        license_number = re.sub(r"\s+", "", license_match.group(1))
-        head = entry[:license_match.start()].strip().rstrip(",")
+            if not looks_like_retail:
+                continue
+            license_number = ""
+            head = entry
+            retail_warnings.append(
+                f"retail line without a license token: {entry[:100]}")
+        else:
+            raw_number = license_match.group(1) or license_match.group(2)
+            license_number = re.sub(r"\s+", "", raw_number)
+            head = entry[:license_match.start()].strip().rstrip(",")
         # License-bearing fallback fragments often start mid-sentence ("was
         # sold at the following … facility between …"); the facility clause
         # starts after that boilerplate.
@@ -528,24 +566,26 @@ def _parse_retail_locations(html_markup: str, text: str) -> list:
             dba = _clean(dba_match.group(1))
             head = head[:dba_match.start()].strip()
         # A dba tail that runs into a street address keeps only the trade
-        # name. Candidate cut points: a comma followed by a house number, a
-        # street-suffix marker (Suite/Blvd/Rd/…), or the ", City, NV ZIP"
-        # clause. The EARLIEST match wins — the city clause follows the
-        # street address, so it must never override an earlier street cut.
+        # name. Cut candidates, earliest match wins:
+        #   1. a comma followed by a house number (", 2900 …")
+        #   2. a street-suffix marker preceded by a house number
+        #      ("2900 E Desert Inn Rd") — the digit anchor is what separates
+        #      a street address from a business name like "Circle S Farms"
+        #      or "Dr Greenthumb"; suffix-only matching silently dropped
+        #      real facilities (gate M2)
+        #   3. a ", City, NV ZIP" clause
         cuts = [
             re.search(r",\s*\d", dba),
-            re.search(r"#\d|\bSuite\b|\bSte\b|\bBlvd\b|\bAve\b|\bRd\b|\bDr\b|"
-                      r"\bPkwy\b|\bCir\b|\bCircle\b|\bLn\b|\bSt\b", dba, re.I),
+            re.search(r"\d\s*(?:[A-Z]\s*)?(?:#\d+|Suite|Ste|Blvd|Ave|Rd|Dr|Pkwy|Cir|Circle|Ln|St)\b", dba, re.I),
             re.search(r",\s*[A-Z][A-Za-z .'-]+?,?\s+NV\s+\d{5}", dba),
         ]
         cuts = [c for c in cuts if c]
         if cuts:
             dba = _clean(dba[:min(c.start() for c in cuts)])
-        # Same earliest-match discipline for the facility head.
+        # Same digit-anchored discipline for the facility head.
         head_cuts = [
             re.search(r",\s*\d", head),
-            re.search(r"#\d|\bSuite\b|\bSte\b|\bBlvd\b|\bAve\b|\bRd\b|\bDr\b|"
-                      r"\bPkwy\b|\bCir\b|\bCircle\b|\bLn\b|\bSt\b", head, re.I),
+            re.search(r"\d\s*(?:[A-Z]\s*)?(?:#\d+|Suite|Ste|Blvd|Ave|Rd|Dr|Pkwy|Cir|Circle|Ln|St)\b", head, re.I),
         ]
         head_cuts = [c for c in head_cuts if c]
         if head_cuts:
@@ -559,11 +599,17 @@ def _parse_retail_locations(html_markup: str, text: str) -> list:
         if city.upper() == "NV":
             city = ""
         key = (head, license_number)
-        if head and key not in seen:
+        if not head:
+            # A license line whose facility name was consumed by address
+            # cutting is a parser defect, not a data condition: surface it
+            # loudly instead of silently dropping the facility (gate M2).
+            retail_warnings.append(entry[:120])
+            continue
+        if key not in seen:
             seen.add(key)
             retail.append({"facility": head, "dba": dba, "city": city,
                            "license_number": license_number})
-    return retail
+    return retail, retail_warnings
 
 
 def parse_bulletin_content(text: str, html_markup: str = "") -> dict:
@@ -594,7 +640,7 @@ def parse_bulletin_content(text: str, html_markup: str = "") -> dict:
                 if product and len(product) < 160:
                     items.append({"product_text": product,
                                   "batch_lot": batch.group(1) if batch else ""})
-    retail = _parse_retail_locations(html_markup, text)
+    retail, retail_warnings = _parse_retail_locations(html_markup, text)
     sold = _SOLD_BETWEEN_RE.search(text)
     concern = _CONCERN_RE.search(text)
     instructions = ""
@@ -605,6 +651,7 @@ def parse_bulletin_content(text: str, html_markup: str = "") -> dict:
     return {
         "affected_items": items,
         "retail_locations": retail,
+        "retail_location_warnings": retail_warnings,
         "sold_between": [sold.group(1), sold.group(2)] if sold else [],
         "concern": _clean(concern.group(1)) if concern else "",
         "consumer_instructions": instructions,

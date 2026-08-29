@@ -274,14 +274,71 @@ class BulletinParsingTestCase(unittest.TestCase):
         self.assertEqual(b["affected_items"][0]["batch_lot"], "OMG554")
 
     def test_retail_locations_never_carry_addresses(self):
-        suffixes = ("Blvd", "Ave", " Rd", "Dr ", "Pkwy", "Cir", " Ln",
-                    "Suite", "Ste ", "#", "NV 8")
+        # Word-boundary matching: "Circle S Farms" must NOT trip "Cir"
+        # (gate M2 regression guard) while real street suffixes still fail.
+        suffix_res = (
+            r"\bBlvd\b", r"\bAve\b", r"\bRd\b", r"\bDr\b", r"\bPkwy\b",
+            r"\bCir\b", r"\bLn\b", r"\bSuite\b", r"\bSte\b", r"#\d",
+            r"NV\s*\d{5}",
+        )
+        import re
+
         for b in self.bulletins:
             for r in b["retail_locations"]:
-                blob = (r["facility"] + " " + r["dba"]).lower()
-                for suffix in suffixes:
-                    self.assertNotIn(suffix.lower(), blob,
-                                     f"address leaked in {b['bulletin_id']}: {r}")
+                blob = (r["facility"] + " " + r["dba"])
+                for pattern in suffix_res:
+                    self.assertIsNone(
+                        re.search(pattern, blob, re.I),
+                        f"address leaked in {b['bulletin_id']}: {r} ({pattern})")
+
+    def test_no_silently_dropped_facilities(self):
+        # Gate M2: every license line in the source must yield a retail row;
+        # drops surface as loud warnings instead of vanishing.
+        b = next(x for x in self.bulletins if x["bulletin_id"] == "3826")
+        self.assertEqual(b["retail_location_warnings"], [])
+        self.assertEqual(len(b["retail_locations"]), 8)  # 8 license lines in source
+
+    def test_business_names_with_street_words_survive(self):
+        # Gate M2b: names like "Circle S Farms" are businesses, not addresses;
+        # the digit-anchored cut must never fire on them.
+        b = next(x for x in self.bulletins if x["bulletin_id"] == "3826")
+        facilities = " | ".join(r["facility"] for r in b["retail_locations"])
+        self.assertIn("Circle S Farms LLC", facilities)
+
+    def test_unlabeled_license_lines_ship(self):
+        # Gate M2 class: bulletin 2022-01 (3296) carries two retail lines
+        # whose license token has no "License #" label — a bare "(digits)"
+        # and a "(TRdigits)" tribal reference. All 16 source lines ship.
+        b = next(x for x in self.bulletins if x["bulletin_id"] == "3296")
+        self.assertEqual(len(b["retail_locations"]), 16)
+        self.assertEqual(b["retail_location_warnings"], [])
+        licenses = {r["license_number"] for r in b["retail_locations"]}
+        self.assertIn("59067229320122936181", licenses)   # bare numeric token
+        self.assertIn("TR658198225338729107", licenses)   # tribal reference token
+
+    def test_bulletin_retail_parity_against_source(self):
+        # Every <li> retail line in every bulletin yields exactly one row;
+        # nothing silently dropped anywhere in the fixture.
+        import re
+
+        for post, b in zip(self.posts, self.bulletins):
+            li_count = len(re.findall(r"<li[^>]*>.*?</li>",
+                                      post["content"]["rendered"], re.S))
+            if li_count:
+                self.assertEqual(
+                    len(b["retail_locations"]), li_count,
+                    f"{b['bulletin_id']}: {li_count} source lines, "
+                    f"{len(b['retail_locations'])} shipped")
+
+    def test_quantity_zero_annotated(self):
+        rows = _fixture_rows()
+        zeroed = [r for r in rows if r["quantity_numeric"] == 0.0]
+        self.assertGreater(len(zeroed), 0)
+        for r in zeroed[:50]:
+            self.assertIn("Quantity=0", r["quantity_note"])
+        nonzero = [r for r in rows if r["quantity_numeric"] not in (0.0, None)]
+        for r in nonzero[:50]:
+            self.assertEqual(r["quantity_note"], "")
 
     def test_retail_location_shape(self):
         b = next(x for x in self.bulletins if x["bulletin_id"] == "3868")
@@ -291,7 +348,6 @@ class BulletinParsingTestCase(unittest.TestCase):
         self.assertEqual(r["dba"], "Silver State Relief Fernley")
         self.assertEqual(r["city"], "Fernley")
         self.assertEqual(r["license_number"], "71064968398758187793")
-
     def test_sold_between(self):
         b = next(x for x in self.bulletins if x["bulletin_id"] == "3868")
         self.assertEqual(b["sold_between"], ["May 9, 2023", "May 21, 2023"])
@@ -311,12 +367,13 @@ class BulletinParsingTestCase(unittest.TestCase):
             "The affected cannabis was sold at the following cannabis sales "
             "facility between May 9, 2023 – May 21, 2023: SILVER STATE RELIEF "
             "LLC dba Silver State Relief Fernley (License #: 71064968398758187793), "
-            "1301 Financial Way, Fernley, NV 89408."
+            "99 Test Way, Fernley, NV 89408."
         )
         self.assertEqual(len(parsed["retail_locations"]), 1)
         r = parsed["retail_locations"][0]
         self.assertEqual(r["facility"], "SILVER STATE RELIEF LLC")
-        self.assertNotIn("Financial Way", r["facility"] + r["dba"])
+        self.assertNotIn("Test Way", r["facility"] + r["dba"])
+        self.assertNotIn("99", r["facility"] + r["dba"])
         self.assertEqual(parsed["sold_between"], ["May 9, 2023", "May 21, 2023"])
 
 

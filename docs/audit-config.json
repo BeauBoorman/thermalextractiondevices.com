@@ -47,7 +47,8 @@
       "200 High Street",
       "2018 Constitutional Court",
       "Constitutional Court",
-      "682 Spring Street"
+      "682 Spring Street",
+      "99 Test Way"
     ],
     "coordinates": [
       "44.12345, -71.98765"
@@ -72,7 +73,7 @@
     "generated_artifacts": [
       "metadata/id-map.jsonl"
     ],
-    "addresses_comment": "Reviewed false positives. 'Constitutional Court' matches the street-suffix pattern in legal citations such as 'the 2018 Constitutional Court ruling'; it is a court, not a street. The remaining entries are synthetic Massachusetts test-fixture addresses. Reviewed 2026-08-09. Add an entry only after confirming the match is not a real premises address.",
+    "addresses_comment": "Reviewed false positives. 'Constitutional Court' matches the street-suffix pattern in legal citations such as 'the 2018 Constitutional Court ruling'; it is a court, not a street. The remaining entries are synthetic Massachusetts test-fixture addresses. Reviewed 2026-08-09. Add an entry only after confirming the match is not a real premises address. '99 Test Way' is the synthetic address-shaped string in the Nevada adapter's plain-text parser test (gate B1, replaced a real address); fabricated, not a premises. Reviewed 2026-08-28.",
     "emails_comment": "noreply@github.com and @users.noreply.github.com are GitHub-generated, non-personal addresses. beau@boorman.tech is the maintainer's own git committer identity, present in the author/committer field of every commit in this repository and already public in the GitHub commit log; it is not leaked third-party PII. Reviewed 2026-08-09.",
     "phones_comment": "555-01xx is the NANP block reserved for fictional use; such numbers cannot be assigned to a real subscriber and appear here only in test fixtures. 617-555-0199 is the specific fixture instance. Reviewed 2026-08-09."
   },
@@ -90,7 +91,8 @@
     "PII-001:tests/test_sensitive_content_classification.py",
     "PII-002:tests/test_sensitive_content_classification.py",
     "PII-003:tests/test_sensitive_content_classification.py",
-    "PII-004:tests/test_sensitive_content_classification.py"
+    "PII-004:tests/test_sensitive_content_classification.py",
+    "PII-003:tests/fixtures/nevada/posts?search=bulletin&per_page=100"
   ],
   "fail_threshold": "high",
   "required_policy_documents": [
@@ -128,6 +130,6 @@
     "Cross-Origin-Opener-Policy": "medium",
     "X-Frame-Options": "high"
   },
-  "suppressions_comment": "Every entry is an exact CODE:path pair or a bare code; audit_common.is_suppressed does no prefix or glob matching, deliberately, so silencing N files costs N reviewable lines. Two classes, both self-detection. (1) Detector definitions: audit_sensitive_content.py and audit_common.py contain the PII regexes themselves, and test_sensitive_content_classification.py contains the synthetic PII-shaped fixtures that prove those regexes fire, including the negative controls that keep the business-contact rule from under-flagging. (2) PII-007 exclusion declarations: this file defines prohibited_fields (already suppressed before 2026-08-13), and the five entries added on 2026-08-13 cover scripts/ingest/validation.py which defines EXCLUDED_FIELD_NAMES, data/massachusetts-ccc/privacy-spec.md and source-catalog.json which are generated from EXCLUDED_FIELD_NAMES, one dated sync report recording which fields the privacy gate BLOCKED, and reports/jurisdiction-pipeline-audit.md which describes the California schema fields the pipeline drops. Each names a field in order to exclude it; none carries a value, verified by re-scanning all six paths with every allowlist and suppression disabled. CAUTION when adding more: prohibited_fields (14 names) and EXCLUDED_FIELD_NAMES (32 names) overlap on only business_email and business_phone, so PII-007 is a much narrower tripwire than it looks, and there is no name detector anywhere in the audit -- nothing else would catch an owner name. Reviewed 2026-08-13.",
+  "suppressions_comment": "Every entry is an exact CODE:path pair or a bare code; audit_common.is_suppressed does no prefix or glob matching, deliberately, so silencing N files costs N reviewable lines. Two classes, both self-detection. (1) Detector definitions: audit_sensitive_content.py and audit_common.py contain the PII regexes themselves, and test_sensitive_content_classification.py contains the synthetic PII-shaped fixtures that prove those regexes fire, including the negative controls that keep the business-contact rule from under-flagging. (2) PII-007 exclusion declarations: this file defines prohibited_fields (already suppressed before 2026-08-13), and the five entries added on 2026-08-13 cover scripts/ingest/validation.py which defines EXCLUDED_FIELD_NAMES, data/massachusetts-ccc/privacy-spec.md and source-catalog.json which are generated from EXCLUDED_FIELD_NAMES, one dated sync report recording which fields the privacy gate BLOCKED, and reports/jurisdiction-pipeline-audit.md which describes the California schema fields the pipeline drops. Each names a field in order to exclude it; none carries a value, verified by re-scanning all six paths with every allowlist and suppression disabled. CAUTION when adding more: prohibited_fields (14 names) and EXCLUDED_FIELD_NAMES (32 names) overlap on only business_email and business_phone, so PII-007 is a much narrower tripwire than it looks, and there is no name detector anywhere in the audit -- nothing else would catch an owner name. Reviewed 2026-08-13. ADDED 2026-08-28 (gate M1): PII-003 on the Nevada WP-JSON fixture (tests/fixtures/nevada/posts?search=bulletin&per_page=100) is a verbatim capture of the CCB's public WordPress REST API — published Nevada government records whose retail-location addresses appear on ccb.nv.gov itself. The fixture previously escaped scanning only because its filename has no extension (query-string URL); the suppression makes the file visible-by-design with the retention decision recorded here. The generated safety-advisory pages exclude street addresses by the digit-anchored parser; fixture retention is for parser fidelity only.",
   "suppressions_history_comment": "PARTIALLY RESOLVED 2026-08-12; the exposure is NOT over. This key formerly recorded three LARGE-004 suppressions covering ~79 MiB of California DCC licensee data reachable in git history. docs/history-cleanup-plan.md was executed and main was force-pushed on 2026-08-12T18:04:56Z, so the payloads are gone from origin/main and those suppression entries were removed. They are NOT gone from GitHub: pull-request refs were never rewritten, so the pre-rewrite history stays reachable and the registry is still fetchable from this public repository by an unauthenticated client (verified 2026-08-13). Reproduction steps and the affected object id are held with the maintainers, deliberately not in this tracked file; private vulnerability reporting is disabled on this repository, so there is no private channel to file them in yet. Do NOT re-add a suppression for this; it needs a GitHub Support request to drop the stale pull refs and expire the objects. Separately, a clone made before the rewrite reports LARGE-003/LARGE-004 from its own stale refs because those checks scan `git rev-list --all`; that part is fixed locally by deleting stale branches and running `git gc --prune=now`."
 }
