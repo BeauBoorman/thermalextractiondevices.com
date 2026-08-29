@@ -4,7 +4,7 @@ title: "Cannabichromene (CBC)"
 parent: cannabinoids
 status: published
 tags: ["cannabinoid", "phytocannabinoid", "neutral"]
-relations: [relates_to=cannabinoids/TCBN-0001, relates_to=cannabinoids/TCBN-0006, relates_to=cannabinoids/TCBN-0031, relates_to=reference/TREF-0003]
+relations: [relates_to=cannabinoids/TCBN-0001, relates_to=cannabinoids/TCBN-0006, relates_to=cannabinoids/TCBN-0026, relates_to=reference/TREF-0003]
 summary: Major minor-cannabinoid decarboxylation product of CBCA with a racemizing chromene skeleton; no measured atmospheric boiling point and no direct human evidence.
 ---
 

@@ -4,7 +4,7 @@ title: "Δ9-Tetrahydrocannabivarinic Acid (THCVA)"
 parent: cannabinoids
 status: published
 tags: ["cannabinoid", "phytocannabinoid", "acid", "propyl-homologue"]
-relations: [relates_to=cannabinoids/TCBN-0008, relates_to=cannabinoids/TCBN-0032, relates_to=reference/TREF-0003]
+relations: [relates_to=cannabinoids/TCBN-0008, relates_to=cannabinoids/TCBN-0024, relates_to=cannabinoids/TCBN-0025, relates_to=cannabinoids/TCBN-0026, relates_to=reference/TREF-0003]
 summary: Propyl acid precursor of THCV co-isolated from Thai cannabis (Shoyama 1977); decarboxylation established, no compound-specific kinetics, no human data.
 ---
 
@@ -27,7 +27,7 @@ summary: Propyl acid precursor of THCV co-isolated from Thai cannabis (Shoyama 1
 
 ### Identity notes
 
-- THCVA was one of the four propyl cannabinoid acids co-isolated from Thai "Meao Variant" cannabis [^2]; CAS 39986-26-0 is corroborated by Cayman CRM 21259 [^1].
+- THCVA was one of the four propyl cannabinoid acids co-isolated from Thai "Meao Variant" cannabis, together with CBDVA, CBCVA, and CBGVA [^2]; CAS 39986-26-0 is corroborated by Cayman CRM 21259 [^1].
 
 ## Physical properties
 

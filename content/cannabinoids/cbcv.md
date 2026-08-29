@@ -4,7 +4,7 @@ title: "Cannabichromevarin (CBCV)"
 parent: cannabinoids
 status: published
 tags: ["cannabinoid", "phytocannabinoid", "neutral", "propyl-homologue"]
-relations: [relates_to=cannabinoids/TCBN-0011, relates_to=cannabinoids/TCBN-0031, relates_to=cannabinoids/TCBN-0021, relates_to=reference/TREF-0003]
+relations: [relates_to=cannabinoids/TCBN-0011, relates_to=cannabinoids/TCBN-0004, relates_to=cannabinoids/TCBN-0024, relates_to=cannabinoids/TCBN-0026, relates_to=reference/TREF-0003]
 summary: Propyl homologue of CBC co-isolated from Thai cannabis with the other varin neutrals; no compound-specific thermal data and no pharmacology literature.
 ---
 

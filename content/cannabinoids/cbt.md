@@ -4,7 +4,7 @@ title: "Cannabitriol (CBT)"
 parent: cannabinoids
 status: published
 tags: ["cannabinoid", "phytocannabinoid", "neutral", "trace"]
-relations: [relates_to=cannabinoids/TCBN-0009, relates_to=cannabinoids/TCBN-0047, relates_to=reference/TREF-0003]
+relations: [relates_to=cannabinoids/TCBN-0009, relates_to=reference/TREF-0003]
 summary: Polyhydroxylated trace cannabinoid (8,9-dihydroxy-Δ9-THC) reported as a THC oxidation companion; identity established, thermal and pharmacology data absent.
 ---
 

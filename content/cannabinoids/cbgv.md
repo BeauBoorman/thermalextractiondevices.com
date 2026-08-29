@@ -4,7 +4,7 @@ title: "Cannabigerovarin (CBGV)"
 parent: cannabinoids
 status: published
 tags: ["cannabinoid", "phytocannabinoid", "neutral", "propyl-homologue"]
-relations: [relates_to=cannabinoids/TCBN-0005, relates_to=cannabinoids/TCBN-0032, relates_to=cannabinoids/TCBN-0018, relates_to=reference/TREF-0003]
+relations: [relates_to=cannabinoids/TCBN-0005, relates_to=cannabinoids/TCBN-0024, relates_to=cannabinoids/TCBN-0018, relates_to=reference/TREF-0003]
 summary: Propyl homologue of CBG from the CBGVA branch; no compound-specific thermal data; sparse in vitro pharmacology only.
 ---
 

@@ -4,7 +4,7 @@ title: "Cannabicyclol (CBL)"
 parent: cannabinoids
 status: published
 tags: ["cannabinoid", "phytocannabinoid", "neutral", "degradation-product"]
-relations: [relates_to=cannabinoids/TCBN-0011, relates_to=cannabinoids/TCBN-0033, relates_to=reference/TREF-0003]
+relations: [relates_to=cannabinoids/TCBN-0011, relates_to=cannabinoids/TCBN-0027, relates_to=reference/TREF-0003]
 summary: Photochemical cycloisomerization product of CBC with a tetracyclic skeleton; no measured boiling point, minimal pharmacology, notable UV-driven formation.
 ---
 
