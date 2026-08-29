@@ -56,7 +56,7 @@ Trace acid in aged material; measured values are batch- and report-attached. Con
 
 ## Biosynthesis and processing
 
-CBGAM was linked biosynthetically to the monomethyl/propyl cannabinoid acid network by Shoyama's group [^1][^2].
+CBGAM was linked biosynthetically to the monomethyl/propyl cannabinoid acid network by Shoyama's group [^1][^2]; the propyl-series elaboration (cannabicyclovarin, Δ7-cis-iso-THCV) from the same group is recorded in the 1981 Thai-cannabis paper [^2a].
 
 ## Reported biological activity
 
@@ -76,7 +76,8 @@ None verified.
 ## Sources
 
 [^1]: Shoyama Y, Yamauchi T, Nishioka I. Cannabis. V. Cannabinerolic acid monomethyl ether and cannabinolic acid. *Chem Pharm Bull.* 1970;18(6):1327–1332. doi:10.1248/cpb.18.1327.
-[^2]: Shoyama Y, Kamura E, Nishioka I. Biosynthesis of propyl cannabinoid acid and its biosynthetic relationship with pentyl and monomethyl cannabinoid acids. *Phytochemistry.* 1984;23(9):1909–1912. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1016/S0031-9422(00)84939-0.
+[^2]: Shoyama Y, Hirano H, Nishioka I. Biosynthesis of propyl cannabinoid acid and its biosynthetic relationship with pentyl and monomethyl cannabinoid acids. *Phytochemistry.* 1984;23(9):1909–1912. doi:10.1016/S0031-9422(00)84939-0.
+[^2a]: Shoyama Y, Kamura E, Nishioka I. Cannabis. XIV. Two new propyl cannabinoids, cannabicyclovarin and Δ7-cis-iso-tetrahydrocannabivarin, from Thai cannabis. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1248/cpb.29.3720.
 [^3]: Eyal AM, Berneman Zeitouni D, Tal D, Schlesinger D, Davidson EM, Raz N. Vapor pressure, vaping, and corrections to misconceptions related to medical cannabis' active pharmaceutical ingredients' physical properties and compositions. *Cannabis Cannabinoid Res.* 2023;8(3):414–425. doi:10.1089/can.2021.0173. PMID 35442765.
 
 ## Related pages

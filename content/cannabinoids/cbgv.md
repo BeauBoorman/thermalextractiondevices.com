@@ -55,7 +55,7 @@ Trace constituent of propyl-rich chemotypes; measured values are batch- and repo
 
 ## Biosynthesis and processing
 
-CBGVA (from divarinolic acid + geranyl pyrophosphate) is the shared precursor of the propyl cannabinoid acids [^6]; CBGV forms by decarboxylation on heating [^2].
+CBGVA (from divarinolic acid + geranyl pyrophosphate) is the shared precursor of the propyl cannabinoid acids [^6]; CBGV forms by decarboxylation on heating [^2]. The wider propyl-series elaboration (cannabicyclovarin, Δ7-cis-iso-THCV) was documented by the same group [^6a].
 
 ## Reported biological activity
 
@@ -82,7 +82,8 @@ None verified.
 [^3]: Eyal AM, Berneman Zeitouni D, Tal D, Schlesinger D, Davidson EM, Raz N. Vapor pressure, vaping, and corrections to misconceptions related to medical cannabis' active pharmaceutical ingredients' physical properties and compositions. *Cannabis Cannabinoid Res.* 2023;8(3):414–425. doi:10.1089/can.2021.0173. PMID 35442765.
 [^4]: Chickos JS. A series of cannabinoids including cannabidiol, cannabigerol, cannabichromene, and Δ8- and Δ9-tetrahydrocannabinol are estimated using synthetic and retrosynthetic analysis, group additivity, and experiment. *Struct Chem.* 2026;37:1097–1108. doi:10.1007/s11224-025-02545-z. (Group-additivity vaporization-enthalpy estimate for CBGV.)
 [^5]: Jikomes N, Zoorob M. The cannabinoid content of legal cannabis in Washington State varies systematically across testing facilities and popular consumer products. *Sci Rep.* 2018;8:4519. doi:10.1038/s41598-018-22755-2.
-[^6]: Shoyama Y, Kamura E, Nishioka I. Biosynthesis of propyl cannabinoid acid and its biosynthetic relationship with pentyl and monomethyl cannabinoid acids. *Phytochemistry.* 1984;23(9):1909–1912. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1016/S0031-9422(00)84939-0.
+[^6]: Shoyama Y, Hirano H, Nishioka I. Biosynthesis of propyl cannabinoid acid and its biosynthetic relationship with pentyl and monomethyl cannabinoid acids. *Phytochemistry.* 1984;23(9):1909–1912. doi:10.1016/S0031-9422(00)84939-0.
+[^6a]: Shoyama Y, Kamura E, Nishioka I. Cannabis. XIV. Two new propyl cannabinoids, cannabicyclovarin and Δ7-cis-iso-tetrahydrocannabivarin, from Thai cannabis. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1248/cpb.29.3720.
 
 ## Related pages
 
