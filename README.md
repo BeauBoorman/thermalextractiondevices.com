@@ -49,6 +49,13 @@ python3 -m unittest discover -s tests -t . -v
 python3 scripts/test_ensure_boris.py -v
 ```
 
+Audit external evidence URLs for decay (non-blocking, networked; see
+[`docs/source-health.md`](docs/source-health.md)):
+
+```sh
+python3 scripts/audit_source_health.py
+```
+
 The normal suite includes the in-process loopback HTTP tests and intentionally
 skips live-source checks. To run those optional network checks explicitly:
 

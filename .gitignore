@@ -46,6 +46,9 @@ data/dcc/*
 var/
 .tools/
 
+# Source-health auditor state (P16): transient network cache, never committed.
+data/source-health/
+
 # Research corpus bulk files (only README.md and _index/ are committed)
 research/*
 !research/README.md
