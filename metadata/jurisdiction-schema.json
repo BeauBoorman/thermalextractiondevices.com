@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://thermalextractiondevices.com/metadata/jurisdiction-schema.json",
+  "title": "Jurisdiction Legal-State Statement (Temporal Model v1)",
+  "description": "Durable registry record for one legal statement about one jurisdiction, with effective-date semantics. Each record is one state of one (jurisdiction, topic) pair: what the law IS (enacted), what it WILL BE (pending: proposed, passed-but-not-effective, or scheduled-but-conditional), or what it WAS (repealed). Statuses are exactly enacted / pending / repealed in v1; 'pending' subsumes proposed legislation and draft regulation. Honesty anchors: verified_as_of is the date the status was checked against the cited source (a statement may be future-effective and still enacted — enactment is about the legislative state, not the calendar); effective_date is when the statement takes/took effect (null = indeterminate or not pinned by the cited source); retrieved_at is when the source was fetched. review_acknowledged=true marks a stale future-dated statement as reviewed (the validator's stale gate). supersedes_effective_date links a state to the prior state it replaces (Oklahoma-style extensions). See docs/jurisdiction-temporal-model.md for authoring guidance and scripts/audit_jurisdiction_temporal.py for the enforced rules (TEM-01..TEM-10).",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "jurisdiction_id",
+    "topic",
+    "status",
+    "effective_date",
+    "verified_as_of",
+    "source_url",
+    "retrieved_at"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "jurisdiction_id": {
+      "type": "string",
+      "pattern": "^jurisdictions/TJUR-[0-9]{4}$",
+      "description": "Canonical jurisdiction profile id (must exist in metadata/id-map.jsonl)."
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 3,
+      "description": "The legal dimension the statement covers, e.g. 'adult-use commercial sales', 'home cultivation (adult use)', 'hemp product THC limit'. Free-form but should be stable per topic so successive states and repeals reference the same string."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["enacted", "pending", "repealed"],
+      "description": "enacted = law/regulation is adopted (regardless of whether its effective date has passed); pending = proposed/passed-but-not-yet-law or scheduled-and-conditional (never overwrite current law with this); repealed = in force previously, no longer."
+    },
+    "effective_date": {
+      "oneOf": [
+        {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+        {"type": "null"}
+      ],
+      "description": "ISO date the statement takes/took effect, or null when the cited source does not pin one (indeterminate). Required key even when null — absence of a date is data, not an omission."
+    },
+    "verified_as_of": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "ISO date the status was verified against source_url. Staleness rules evaluate relative to this date, not to today."
+    },
+    "source_url": {
+      "type": "string",
+      "minLength": 8,
+      "description": "Primary source (regulator, statute, regulation, official dataset) supporting the status. Same evidence rule as the rest of the archive."
+    },
+    "retrieved_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "ISO date the source was retrieved (mirrors metadata/jurisdiction-sources.jsonl)."
+    },
+    "review_acknowledged": {
+      "type": "boolean",
+      "description": "True when a stale future-dated statement (effective date elapsed since verification) has been reviewed and deliberately left unchanged. Silences the validator's stale gate (TEM-05) only; impossibilities still fail.",
+      "default": false
+    },
+    "note": {
+      "type": "string",
+      "description": "Free-text context: conditionality, milestones, scope limits, why a date is null."
+    },
+    "supersedes_effective_date": {
+      "oneOf": [
+        {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+        {"type": "null"}
+      ],
+      "description": "effective_date of the prior state of the same topic that this statement replaces. Must be strictly earlier than this record's effective_date."
+    }
+  }
+}

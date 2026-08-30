@@ -27,6 +27,9 @@ python3 scripts/audit_record_completeness.py "$CONTENT_DIR" --vocab metadata/dev
 echo "==> Validating cultivar identity claim registry"
 python3 scripts/validate_cultivar_claims.py --root "$CONTENT_DIR" --claims metadata/cultivar-claims.jsonl
 
+echo "==> Auditing jurisdiction legal-state statements (temporal model)"
+python3 scripts/audit_jurisdiction_temporal.py
+
 echo "==> Validating the evidence-aware crosslink layer"
 python3 scripts/validate_crosslinks.py --root "$CONTENT_DIR" --map metadata/id-map.jsonl --claims metadata/cultivar-claims.jsonl --coa metadata/coa-records.jsonl
 
