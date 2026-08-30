@@ -268,7 +268,20 @@ def normalize_analyte_name(raw: str) -> tuple[str, str, float]:
     Returns ``(slug, canonical_display, confidence)``. Only unambiguous
     identities get confidence >= 0.9; everything else is returned as a slug of
     the raw text with low confidence and is never silently mapped to the graph.
+
+    Resolution is registry-backed: the inline table below remains the
+    confidence-tier fallback, but a hit in the canonical registry
+    (``metadata/analyte-registry.json`` via ``ingest.analytes``) returns
+    ``(registry id, registry display, 0.98)`` first, so every adapter
+    shares one identity source and new spellings land in the registry
+    instead of this table.
     """
+    from .analytes import resolve_analyte
+
+    entry = resolve_analyte(raw)
+    if entry is not None:
+        return (entry["id"], entry["display"], 0.98)
+
     text = " ".join(str(raw or "").split()).lower().strip()
     if not text:
         return ("", "", 0.0)
