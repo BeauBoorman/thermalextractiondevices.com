@@ -10,7 +10,7 @@
       "aliases": [
         "thc"
       ],
-      "cas": "1972-08-03",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
@@ -25,7 +25,7 @@
         "delta9-thc",
         "d9-thc"
       ],
-      "cas": "1972-08-03",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
@@ -94,7 +94,7 @@
         "cannabidiol",
         "cbd"
       ],
-      "cas": "13956-29-1",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
@@ -442,7 +442,7 @@
       "aliases": [
         "arsenic"
       ],
-      "cas": "7440-38-2",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
@@ -454,7 +454,7 @@
       "aliases": [
         "cadmium"
       ],
-      "cas": "7440-43-9",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
@@ -466,7 +466,7 @@
       "aliases": [
         "lead"
       ],
-      "cas": "7439-92-1",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
@@ -478,7 +478,7 @@
       "aliases": [
         "mercury"
       ],
-      "cas": "7439-97-6",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
@@ -496,12 +496,12 @@
       "source": "adapter"
     },
     {
-      "id": "total-coliforms",
-      "display": "Total Coliforms",
+      "id": "coliforms",
+      "display": "Coliforms",
       "class": "microbial",
       "aliases": [
-        "total coliforms",
-        "coliforms"
+        "coliforms",
+        "total coliforms"
       ],
       "cas": null,
       "inchikey": null,
@@ -650,13 +650,25 @@
       "source": "adapter"
     },
     {
+      "id": "residual-solvents",
+      "display": "Residual Solvents",
+      "class": "solvent",
+      "aliases": [
+        "residual solvents"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
       "id": "butane",
       "display": "Butane",
       "class": "solvent",
       "aliases": [
         "butane"
       ],
-      "cas": "106-97-8",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
@@ -668,7 +680,7 @@
       "aliases": [
         "propane"
       ],
-      "cas": "74-98-6",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
@@ -680,7 +692,7 @@
       "aliases": [
         "heptane"
       ],
-      "cas": "142-82-5",
+      "cas": null,
       "inchikey": null,
       "wiki_path": null,
       "source": "adapter"
