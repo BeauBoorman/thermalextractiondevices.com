@@ -342,14 +342,15 @@ def normalize_analyte_name(raw: str) -> tuple[str, str, float]:
         "water-activity": ("water-activity", "Water activity", 0.95),
         "moisture": ("moisture", "Moisture", 0.9),
     }
-    # Exact match first, then longest-first prefix match so matrix suffixes
-    # ("arsenic-raw-plant-material") resolve and so "thca" beats "thc".
+    # Exact match only: no prefix tier in the fallback either. A slug
+    # that merely starts with a known key ("beta-caryophyllene-oxide")
+    # names a different substance and must fall through to the
+    # low-confidence slug, never inherit a neighbor's identity
+    # (adversarial review F1). Matrix decorations are handled by the
+    # registry tier before this fallback runs.
     hit = table.get(cleaned)
     if hit:
         return hit
-    for key in sorted(table, key=len, reverse=True):
-        if cleaned.startswith(key + "-"):
-            return table[key]
     # No unambiguous identity: keep the deterministic slug but low confidence.
     return (cleaned, str(raw).strip(), 0.2)
 

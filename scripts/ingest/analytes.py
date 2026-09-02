@@ -51,20 +51,22 @@ def _slug(text: str) -> str:
 
 # Matrix suffixes observed in MA "ANALYTE/TEST ID" and NV "Test Type Name"
 # strings. The analyte identity is the prefix; the matrix is sample context.
+# Kept exhaustive for the known state surfaces: a name decorated with a word
+# missing here resolves to None (never guessed), which is the intended signal
+# to extend this tuple.
 _MATRIX_WORDS = (
     "raw plant material", "whole wet plants", "whole wet plant",
     "non-solvent concentrate", "solvent based concentrate",
-    "solvent-based concentrate", "infused edible",
-    "r&d testing (infused products)", "r&d testing",
+    "solvent-based concentrate", "infused edible", "infused non-edible",
+    "r&d testing (infused products)", "r&d testing", "sub-contract",
 )
 
 
 def _strip_matrix(slug: str) -> str:
     for matrix in _MATRIX_WORDS:
-        suffix = "-" + _SLUG_RE.sub("-", matrix) + "-"
-        if slug.startswith(suffix.rstrip("-") + "-") or slug.endswith(suffix):
-            slug = slug.replace(suffix, "-")
-        slug = slug.replace("-" + _SLUG_RE.sub("-", matrix), "")
+        suffix = "-" + _SLUG_RE.sub("-", matrix)
+        if slug.endswith(suffix):
+            slug = slug[: -len(suffix)]
     return slug.strip("-")
 
 
@@ -126,23 +128,24 @@ def resolve_analyte(raw: str) -> Optional[dict]:
 
     Returns the entry dict or ``None``. Matching: exact alias slug first,
     then the matrix-stripped slug (MA/NV decorate names with the sample
-    matrix), then longest-prefix alias match so e.g.
-    "beta-caryophyllene-oxide" style extensions resolve predictably.
+    matrix). There is deliberately no prefix tier: a slug that merely
+    starts with a known alias ("beta-caryophyllene-oxide",
+    "alpha-pinene-oxide", "thc-v") names a different substance than the
+    alias and must resolve to its own entry or stay unresolved — never
+    silently inherit a neighbor's identity (adversarial review F1).
     Unmatched names stay unresolved — the registry grows from real
     surfaces, it never guesses.
     """
-    table = load_registry()["_alias_table"]
+    registry = load_registry()
+    table = registry["_alias_table"]
     slug = _slug(raw)
     if not slug:
         return None
     if slug in table:
-        return load_registry()["_by_id"][table[slug]]
+        return registry["_by_id"][table[slug]]
     stripped = _strip_matrix(slug)
     if stripped != slug and stripped in table:
-        return load_registry()["_by_id"][table[stripped]]
-    for alias in sorted(table, key=len, reverse=True):
-        if stripped.startswith(alias + "-") or slug.startswith(alias + "-"):
-            return load_registry()["_by_id"][table[alias]]
+        return registry["_by_id"][table[stripped]]
     return None
 
 

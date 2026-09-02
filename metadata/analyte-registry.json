@@ -65,6 +65,7 @@
       "class": "cannabinoid",
       "aliases": [
         "tetrahydrocannabivarin",
+        "thc-v",
         "thcv"
       ],
       "cas": null,
@@ -118,6 +119,7 @@
       "class": "cannabinoid",
       "aliases": [
         "cannabidivarin",
+        "cbd-v",
         "cbdv"
       ],
       "cas": null,
@@ -412,7 +414,9 @@
       "class": "terpene",
       "aliases": [
         "caryophyllene oxide",
-        "caryophyllene-oxide"
+        "caryophyllene-oxide",
+        "beta-caryophyllene oxide",
+        "β-caryophyllene oxide"
       ],
       "cas": "1139-30-6",
       "inchikey": "NVEQFIOZRFFVFW-RGCMKSIDSA-N",

@@ -151,6 +151,66 @@ class GreekAndMatrixTestCase(unittest.TestCase):
         self.assertEqual(canonical_id("Mystery Analyte 77"),
                          "mystery-analyte-77")
 
+    def test_nv_matrix_decorations_resolve_without_prefix_tier(self):
+        """Sub-Contract / Infused Non-Edible are matrices, not compounds."""
+        for raw, want in [
+            ("Aspergillus Niger Sub-Contract", "aspergillus"),
+            ("Salmonella Infused Non-Edible", "salmonella"),
+            ("Foreign Matter Inspection Infused Non-Edible", "foreign-matter"),
+            ("Pathogenic E. Coli Sub-Contract", "ste-coli"),
+        ]:
+            self.assertEqual(canonical_id(raw), want, raw)
+
+
+class NoPrefixGuessingTestCase(unittest.TestCase):
+    """Suffix-extended names are different substances, never neighbors.
+
+    Adversarial review F1: the old tier-3 prefix match resolved
+    "Beta-Caryophyllene Oxide" to beta-caryophyllene at 0.98 confidence,
+    shadowing the oxide's own registry entry. These must resolve to their
+    own entry, or stay unresolved — never inherit a prefix neighbor.
+    """
+
+    def test_suffix_compounds_with_own_entries_resolve_to_them(self):
+        for raw, want in [
+            ("Beta-Caryophyllene Oxide", "caryophyllene-oxide"),
+            ("beta-caryophyllene-oxide", "caryophyllene-oxide"),
+            ("THC-V", "thcv"),
+            ("CBD-V", "cbdv"),
+        ]:
+            self.assertEqual(canonical_id(raw), want, raw)
+
+    def test_suffix_names_without_entries_stay_unresolved(self):
+        for raw in ("Alpha-Pinene Oxide", "Limonene Peroxide",
+                    "Bisabolol Oxide", "CBN-A", "CBC-V",
+                    "Butane Hash Oil", "Delta-8", "Salmonella Spp"):
+            self.assertIsNone(resolve_analyte(raw), raw)
+
+    def test_unresolved_suffix_names_keep_low_confidence_via_evidence(self):
+        from scripts.ingest.evidence import normalize_analyte_name
+        slug, display, confidence = normalize_analyte_name("Alpha-Pinene Oxide")
+        self.assertEqual(slug, "alpha-pinene-oxide")
+        self.assertLess(confidence, 0.3)
+
+    def test_own_entry_not_shadowed_through_evidence_bridge(self):
+        from scripts.ingest.evidence import normalize_analyte_name
+        slug, display, confidence = normalize_analyte_name("Beta-Caryophyllene Oxide")
+        self.assertEqual(slug, "caryophyllene-oxide")
+        self.assertGreaterEqual(confidence, 0.9)
+
+    def test_fallback_prefix_loop_is_gone_too(self):
+        """evidence.py's inline fallback had the same prefix loop."""
+        from scripts.ingest.evidence import normalize_analyte_name
+        # Registry miss + fallback miss must stay low-confidence: the old
+        # fallback prefix-matched "butane-" and returned butane at 0.98.
+        slug, _, confidence = normalize_analyte_name("Butane Hash Oil")
+        self.assertEqual(slug, "butane-hash-oil")
+        self.assertLess(confidence, 0.3)
+        # Registry hit still wins first for matrix-decorated names.
+        slug, _, confidence = normalize_analyte_name("Arsenic (ppm) Raw Plant Material")
+        self.assertEqual(slug, "arsenic")
+        self.assertGreaterEqual(confidence, 0.9)
+
 
 class ValidatorTestCase(unittest.TestCase):
     def test_unmapped_is_warning_by_default(self):
