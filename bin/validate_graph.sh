@@ -27,6 +27,12 @@ python3 scripts/audit_record_completeness.py "$CONTENT_DIR" --vocab metadata/dev
 echo "==> Validating cultivar identity claim registry"
 python3 scripts/validate_cultivar_claims.py --root "$CONTENT_DIR" --claims metadata/cultivar-claims.jsonl
 
+echo "==> Auditing cultivar pages for chemotype-implying phrasing (P18)"
+# Medium-severity findings (e.g. unsourced 'Common Primary Terpene Descriptors')
+# do not block the build; high-severity ones (unsourced dominant-terpene or
+# typical-THC claims) do. Rewording, not suppression, is the fix.
+python3 scripts/audit_cultivar_chemotype.py "$CONTENT_DIR/cultivars"
+
 echo "==> Validating the evidence-aware crosslink layer"
 python3 scripts/validate_crosslinks.py --root "$CONTENT_DIR" --map metadata/id-map.jsonl --claims metadata/cultivar-claims.jsonl --coa metadata/coa-records.jsonl
 
