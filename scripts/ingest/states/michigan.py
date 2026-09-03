@@ -734,24 +734,72 @@ KNOWN_LABS = [
 # ---------------------------------------------------------------------------
 
 
+def _unwrap_pdf_text(text: str) -> list[str]:
+    """Join PDF-extracted line wraps into paragraphs.
+
+    pdftotext breaks sentences mid-word across lines; blank lines separate
+    blocks. Joining the fragments first is what lets the recall parsers
+    below quote complete sentences instead of line-wrap fragments (the
+    original bulletin text is the authority; we never paraphrase it).
+    """
+    paragraphs: list[str] = []
+    current: list[str] = []
+    for raw in text.split("\n"):
+        line = raw.strip()
+        if not line:
+            if current:
+                paragraphs.append(" ".join(current))
+                current = []
+            continue
+        current.append(line)
+    if current:
+        paragraphs.append(" ".join(current))
+    return paragraphs
+
+
+def _sentence_containing(paragraph: str, needle: str) -> str:
+    """Return the full sentence within ``paragraph`` containing ``needle``."""
+    for sentence in re.split(r"(?<=[.:])\s+", paragraph):
+        if needle.lower() in sentence.lower():
+            return sentence.strip()
+    return ""
+
+
+def _reject_address_bearing(text_value: str) -> str:
+    """Blank a bulletin quote if it would carry a street address.
+
+    Defensive privacy gate on top of sentence-level extraction: whatever the
+    extractor picks up, a generated page must never reproduce a retail
+    premises address. Uses the shared validation STREET_RE (the same
+    detector the public-release audit runs), so the parser and the audit
+    cannot drift apart.
+    """
+    from ..validation import STREET_RE
+    if text_value and STREET_RE.search(text_value):
+        return ""
+    return text_value
+
+
 def parse_exclusive_recall(text: str) -> dict:
     """Parse the Exclusive Brands recall bulletin (August 27, 2025)."""
-    lines = text.strip().split("\n")
+    paragraphs = _unwrap_pdf_text(text)
     title = "Recall Bulletin: Exclusive Brands — MCT Oil in Vape Carts"
     date_str = "August 27, 2025"
-    concern = ""
     products = ["Kushy Punch-Vapes (Pineapple Jealousy)"]
     licensees = ["AU-P-000099 (Exclusive Brands, Ann Arbor)"]
+    concern = ""
     additional_info = ""
 
-    for line in lines:
-        stripped = line.strip()
-        if "Medium Chain Triglyceride" in stripped or "MCT" in stripped:
-            concern = stripped
-        if "sold between" in stripped.lower():
-            additional_info = stripped
-        if "5,765" in stripped:
-            additional_info = stripped if not additional_info else additional_info
+    for paragraph in paragraphs:
+        if not concern:
+            hit = (_sentence_containing(paragraph, "Medium Chain Triglyceride")
+                   or _sentence_containing(paragraph, "MCT oil"))
+            if hit:
+                concern = hit
+        if not additional_info:
+            hit = _sentence_containing(paragraph, "sold between")
+            if hit:
+                additional_info = hit
 
     if not concern:
         concern = "Vape carts contained Medium Chain Triglyceride (MCT) oil, an unapproved additive."
@@ -770,24 +818,36 @@ def parse_exclusive_recall(text: str) -> dict:
 
 def parse_flavor_galaxy_recall(text: str) -> dict:
     """Parse the Flavor Galaxy recall bulletin (May 15, 2024)."""
-    lines = text.strip().split("\n")
+    paragraphs = _unwrap_pdf_text(text)
     title = "Recall Bulletin: Flavor Galaxy — Untested Infused Pre-Rolls"
     date_str = "May 15, 2024"
-    concern = ""
     products = ["Infused pre-rolls (1,098 units)"]
     licensees = ["AU-P-000373 (Flavor Galaxy LLC, Hazel Park)"]
-    retailers = []
+    retailers = [line.strip() for line in text.split("\n")
+                 if re.match(r"^AU-R-\d+$", line.strip())]
+    concern = ""
     additional_info = ""
 
-    for line in lines:
-        stripped = line.strip()
-        if "not submit" in stripped.lower() or "not tested" in stripped.lower():
-            concern = stripped
-        if stripped.startswith("AU-R-"):
-            retailers.append(stripped)
-        if "sold between" in stripped.lower() or "between" in stripped.lower():
-            if "November" in stripped or "May" in stripped:
-                additional_info = stripped
+    for paragraph in paragraphs:
+        # The two investigation sentences are the concern. The intro
+        # paragraph — which carries the licensee's street address — is
+        # deliberately never selected: sentence-level extraction keeps the
+        # address out even though pdftotext merged the two paragraphs into
+        # one block. The adapter reproduces bulletin prose but never retail
+        # premises addresses.
+        if not concern:
+            hits = [s for s in re.split(r"(?<=[.:])\s+", paragraph)
+                    if "did not submit" in s.lower()
+                    or "were not tested after" in s.lower()]
+            if hits:
+                concern = " ".join(hits)
+        if not additional_info:
+            hit = _sentence_containing(paragraph, "between November 25, 2023")
+            if hit:
+                additional_info = hit
+
+    concern = _reject_address_bearing(concern)
+    additional_info = _reject_address_bearing(additional_info)
 
     if not concern:
         concern = (
@@ -803,7 +863,7 @@ def parse_flavor_galaxy_recall(text: str) -> dict:
         "concern": concern,
         "products": products,
         "licensees": licensees,
-        "retailers": retailers[:5],
+        "retailers": retailers,
         "additional_info": additional_info,
         "slug": "flavor-galaxy-recall",
         "url": "https://www.michigan.gov/cra/sections/enforcement-division/recalls",
@@ -811,34 +871,25 @@ def parse_flavor_galaxy_recall(text: str) -> dict:
 
 
 def parse_monthly_report(text: str) -> dict:
-    """Extract key statistics from the CRA monthly report text."""
+    """Extract key statistics from the CRA monthly report text.
+
+    The pdftotext dump interleaves table blocks: label columns and value
+    columns land in separate runs (see ``tests/fixtures/michigan/
+    monthly-report.txt``), so no reliable "Category  Count" line pattern
+    exists. Rather than guess numbers out of scrambled columns, the parser
+    reports honestly empty license-count maps; the dataset page describes
+    the source without claiming extracted counts. This mirrors the pinned
+    contract in ``tests/test_michigan.py``.
+    """
     lines = text.strip().split("\n")
 
     adult_use_counts: dict[str, int] = {}
     medical_counts: dict[str, int] = {}
-    section = ""
-    for line in lines:
-        stripped = line.strip()
-        if "Adult-Use" in stripped and "License" in stripped:
-            section = "au"
-            continue
-        if "Medical" in stripped and "License" in stripped:
-            section = "med"
-            continue
-        if section and re.match(r"^[A-Za-z].+\\s+\\d+", stripped):
-            # Look for "Category  Count" pattern
-            match = re.match(r"^(.+?)\\s+(\\d+)\\s*$", stripped)
-            if match:
-                name, count = match.group(1).strip(), int(match.group(2))
-                if section == "au":
-                    adult_use_counts[name] = count
-                elif section == "med":
-                    medical_counts[name] = count
 
     return {
         "adult_use_licenses": adult_use_counts,
         "medical_licenses": medical_counts,
-        "raw_text_sample": "\\n".join(lines[:20]),
+        "raw_text_sample": "\n".join(lines[:20]),
     }
 
 
@@ -1014,7 +1065,7 @@ class MichiganSync:
         path.parent.mkdir(parents=True, exist_ok=True)
         if path.is_file():
             existing = path.read_text(encoding="utf-8", errors="replace")
-            existing_id = re.search(r"^id:\\s*(.+?)\\s*$", existing, flags=re.M)
+            existing_id = re.search(r"^id:\s*(.+?)\s*$", existing, flags=re.M)
             if existing_id and existing_id.group(1).strip().strip('"') != entity_id:
                 raise IngestError(
                     f"refusing to overwrite {rel_path}: existing id "

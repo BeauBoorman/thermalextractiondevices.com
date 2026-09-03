@@ -149,12 +149,56 @@ class RecallParsingTestCase(unittest.TestCase):
         self.assertTrue(recall["licensees"])
         self.assertTrue(recall["url"].startswith("https://www.michigan.gov"))
 
+    def test_exclusive_recall_quotes_complete_sentences(self):
+        # PDF line-wrap fragments ("Chain Triglyceride (MCT) oil.",
+        # "Brands and sold between ...") must never reach a generated page;
+        # the parser unwraps wraps and quotes whole sentences.
+        text = (FIXTURES / "Recall-Bulletin-Exclusive.txt").read_text(encoding="utf-8")
+        recall = parse_exclusive_recall(text)
+        self.assertTrue(recall["concern"].startswith("In its investigation"))
+        self.assertTrue(recall["concern"].endswith("oil."))
+        self.assertTrue(recall["additional_info"].startswith("Consumers who purchased"))
+        self.assertIn("January 23, 2025 and May 12, 2025", recall["additional_info"])
+
     def test_parse_flavor_galaxy_recall_fixture(self):
         text = (FIXTURES / "Recall-Bulletin---Flavor-Galaxy---FINAL.txt").read_text(encoding="utf-8")
         recall = parse_flavor_galaxy_recall(text)
         self.assertIn("Flavor Galaxy", recall["title"])
         self.assertTrue(recall["licensees"])
         self.assertTrue(any(r.startswith("AU-R-") for r in recall["retailers"]))
+
+    def test_flavor_galaxy_recall_quotes_complete_sentences(self):
+        text = (FIXTURES / "Recall-Bulletin---Flavor-Galaxy---FINAL.txt").read_text(encoding="utf-8")
+        recall = parse_flavor_galaxy_recall(text)
+        self.assertTrue(recall["concern"].startswith("In its investigation"))
+        self.assertIn("did not submit", recall["concern"])
+        self.assertIn("were not tested after", recall["concern"])
+        self.assertTrue(recall["additional_info"].startswith("Consumers who purchased"))
+
+    def test_flavor_galaxy_recall_lists_every_retailer(self):
+        # The bulletin lists 20 retail licensees; truncating to 5 silently
+        # dropped 15 affected retailers from the public safety page.
+        text = (FIXTURES / "Recall-Bulletin---Flavor-Galaxy---FINAL.txt").read_text(encoding="utf-8")
+        recall = parse_flavor_galaxy_recall(text)
+        self.assertEqual(len(recall["retailers"]), 20)
+
+    def test_recall_prose_never_carries_addresses(self):
+        # Defensive privacy gate: whatever the extractor picks up, bulletin
+        # prose on generated pages must not include the licensee street
+        # address printed in the source PDF (21015 John R Road, Hazel Park).
+        from scripts.ingest.validation import STREET_RE
+        for name in ("Recall-Bulletin-Exclusive.txt",
+                     "Recall-Bulletin---Flavor-Galaxy---FINAL.txt"):
+            text = (FIXTURES / name).read_text(encoding="utf-8")
+            if "Flavor" in name:
+                recall = parse_flavor_galaxy_recall(text)
+            else:
+                recall = parse_exclusive_recall(text)
+            for field in ("concern", "additional_info"):
+                value = recall.get(field, "")
+                self.assertFalse(
+                    STREET_RE.search(value),
+                    f"{name}: {field} carries a street address: {value!r}")
 
 
 class MonthlyReportParsingTestCase(unittest.TestCase):
