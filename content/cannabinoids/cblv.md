@@ -77,7 +77,7 @@ None verified.
 
 ## Sources
 
-[^2]: Shoyama Y, Kamura E, Nishioka I. Cannabis. XIV. Two new propyl cannabinoids, cannabicyclovarin and Δ7-cis-iso-tetrahydrocannabivarin, from Thai cannabis. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1248/cpb.29.3720.
+[^2]: Shoyama Y, Morimoto S, Nishioka I. Cannabis. XIV. Two new propyl cannabinoids, cannabicyclovarin and Δ7-cis-iso-tetrahydrocannabivarin, from Thai cannabis. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1248/cpb.29.3720.
 [^3]: Crombie L, Ponsford R, Shani A, Yagnitinsky B. Hashish components. Photochemical production of cannabicyclol from cannabichromene. *Tetrahedron Lett.* 1968;9(58):5771–5772. doi:10.1016/S0040-4039(00)76346-5. PMID 5697175.
 [^eyal]: Eyal AM, Berneman Zeitouni D, Tal D, Schlesinger D, Davidson EM, Raz N. Vapor pressure, vaping, and corrections to misconceptions related to medical cannabis' active pharmaceutical ingredients' physical properties and compositions. *Cannabis Cannabinoid Res.* 2023;8(3):414–425. doi:10.1089/can.2021.0173. PMID 35442765.
 

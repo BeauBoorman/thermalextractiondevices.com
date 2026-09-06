@@ -81,7 +81,7 @@ None verified.
 [^4]: Urvashi, Han JH, Hong M, Kwon TH, Druelinger M, Park SH, Kinney CA, Olejar KJ. Thermo-chemical conversion kinetics of cannabinoid acids in hemp (Cannabis sativa L.) using pressurized liquid extraction. *J Cannabis Res.* 2024;6:33. doi:10.1186/s42238-024-00243-x. PMID 39080738.
 [^5]: Shoyama Y, Hirano H, Makino H, Umekita N, Nishioka I. Cannabis. X. The isolation and structures of four new propyl cannabinoid acids, tetrahydrocannabivarinic acid, cannabidivarinic acid, cannabichromevarinic acid and cannabigerovarinic acid, from Thai cannabis, 'Meao Variant'. *Chem Pharm Bull.* 1977;25(9):2306–2311. doi:10.1248/cpb.25.2306.
 [^6]: Shoyama Y, Hirano H, Nishioka I. Biosynthesis of propyl cannabinoid acid and its biosynthetic relationship with pentyl and monomethyl cannabinoid acids. *Phytochemistry.* 1984;23(9):1909–1912. doi:10.1016/S0031-9422(00)84939-0.
-[^6a]: Shoyama Y, Kamura E, Nishioka I. Cannabis. XIV. Two new propyl cannabinoids, cannabicyclovarin and Δ7-cis-iso-tetrahydrocannabivarin, from Thai cannabis. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1248/cpb.29.3720.
+[^6a]: Shoyama Y, Morimoto S, Nishioka I. Cannabis. XIV. Two new propyl cannabinoids, cannabicyclovarin and Δ7-cis-iso-tetrahydrocannabivarin, from Thai cannabis. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1248/cpb.29.3720.
 
 ## Related pages
 

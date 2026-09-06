@@ -83,7 +83,7 @@ None verified.
 [^4]: Chickos JS. A series of cannabinoids including cannabidiol, cannabigerol, cannabichromene, and Δ8- and Δ9-tetrahydrocannabinol are estimated using synthetic and retrosynthetic analysis, group additivity, and experiment. *Struct Chem.* 2026;37:1097–1108. doi:10.1007/s11224-025-02545-z. (Group-additivity vaporization-enthalpy estimate for CBGV.)
 [^5]: Jikomes N, Zoorob M. The cannabinoid content of legal cannabis in Washington State varies systematically across testing facilities and popular consumer products. *Sci Rep.* 2018;8:4519. doi:10.1038/s41598-018-22755-2.
 [^6]: Shoyama Y, Hirano H, Nishioka I. Biosynthesis of propyl cannabinoid acid and its biosynthetic relationship with pentyl and monomethyl cannabinoid acids. *Phytochemistry.* 1984;23(9):1909–1912. doi:10.1016/S0031-9422(00)84939-0.
-[^6a]: Shoyama Y, Kamura E, Nishioka I. Cannabis. XIV. Two new propyl cannabinoids, cannabicyclovarin and Δ7-cis-iso-tetrahydrocannabivarin, from Thai cannabis. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1248/cpb.29.3720.
+[^6a]: Shoyama Y, Morimoto S, Nishioka I. Cannabis. XIV. Two new propyl cannabinoids, cannabicyclovarin and Δ7-cis-iso-tetrahydrocannabivarin, from Thai cannabis. *Chem Pharm Bull.* 1981;29(12):3720–3723. doi:10.1248/cpb.29.3720.
 
 ## Related pages
 
