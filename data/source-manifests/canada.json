@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "state": "canada",
+  "regulator_name": "Health Canada (federal; Cannabis Act regulator and Recalls and Safety Alerts publisher)",
+  "regulator_url": "https://www.canada.ca/en/health-canada.html",
+  "researched": true,
+  "research_status": "recall surfaces verified 2026-09-06 via the daily open-data feed (live HTTP GET); device-relevant sweep completed",
+  "updated_date": "2026-09-06",
+  "sources": [
+    {
+      "name": "Recalls and Safety Alerts open-data feed (English JSON)",
+      "authority": "Health Canada",
+      "url": "https://recalls-rappels.canada.ca/sites/default/files/opendata-donneesouvertes/HCRSAMOpenData.json",
+      "source_class": "open-data-api",
+      "machine_readable": true,
+      "authentication_required": false,
+      "format": "json",
+      "refresh_cadence": "daily",
+      "discovered_date": "2026-09-06",
+      "last_checked_date": "2026-09-06",
+      "retrieval_method": "http-get",
+      "archival_strategy": "none",
+      "licensing_redistribution_caveat": "Open Government Licence - Canada; attribution required, no endorsement implied",
+      "notes": "34,052 rows at retrieval; cannabis subcategory (Controlled substances and cannabis organization) 98 rows; CSV variant available alongside."
+    },
+    {
+      "name": "Recalls and Safety Alerts open-data feed (English CSV)",
+      "authority": "Health Canada",
+      "url": "https://recalls-rappels.canada.ca/sites/default/files/opendata-donneesouvertes/HCRSAMOpenData.csv",
+      "source_class": "downloadable-dataset",
+      "machine_readable": true,
+      "authentication_required": false,
+      "format": "csv",
+      "refresh_cadence": "daily",
+      "discovered_date": "2026-09-06",
+      "last_checked_date": "2026-09-06",
+      "retrieval_method": "http-get",
+      "archival_strategy": "none",
+      "licensing_redistribution_caveat": "Open Government Licence - Canada",
+      "notes": "Same content as the JSON feed."
+    },
+    {
+      "name": "Recalls and Safety Alerts search portal",
+      "authority": "Health Canada",
+      "url": "https://recalls-rappels.canada.ca/en",
+      "source_class": "recalls",
+      "machine_readable": false,
+      "authentication_required": false,
+      "format": "html",
+      "refresh_cadence": "continuous",
+      "discovered_date": "2026-09-06",
+      "last_checked_date": "2026-09-06",
+      "retrieval_method": "http-get",
+      "archival_strategy": "none",
+      "notes": "Notice detail pages carry unit counts, lots, incident counts, and company roles that the feed rows do not."
+    }
+  ],
+  "notes": "Federal (non-US-state) jurisdiction manifest for the Health Canada recall sweep. The licensed-cultivator table and market-data surfaces named on jurisdictions/TJUR-0057 are cataloged there and remain ingestion candidates; this manifest covers the recall surfaces only."
+}
