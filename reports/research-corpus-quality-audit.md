@@ -93,7 +93,7 @@ page uses for identical claims, each verified to exist and match the claim):
 - CBDAS/THCAS allele balance and Type I/II/III chemotype → de Meijer et al. 2003, *Genetics*
   163(1):335–346, PMID 12586720.
 - Occurrence ranges → Stack et al. 2023, *Plant Direct.* 7(6):e503, doi:10.1002/pld3.503,
-  PMID 37347078; Jikomes & Zoorob 2018, *Sci Rep.* 8:13090, doi:10.1038/s41598-018-22755-2.
+  PMID 37347078; Jikomes & Zoorob 2018, *Sci Rep.* 8:4519, doi:10.1038/s41598-018-22755-2.
 - Biological evidence (mouse anxiolytic/antinociceptive, in vitro COX-2; no controlled human
   trials) → Formato et al. 2020, *Molecules.* 25(11):2638, doi:10.3390/molecules25112638,
   PMID 32517131; Takeda et al. 2008, *Drug Metab Dispos.* 36(9):1917–1921,
@@ -249,7 +249,7 @@ None (citation/source edits only).
   corrections; confirmed used on `cbd.md`/`thca.md`/`cbg.md`/`thcv.md`/`cbdv.md`.
 - de Meijer et al. 2003 (*Genetics* 163(1):335–346, PMID 12586720) — chemotype inheritance.
 - Stack et al. 2023 (*Plant Direct.* 7(6):e503, PMID 37347078) — high-CBD hemp ranges.
-- Jikomes & Zoorob 2018 (*Sci Rep.* 8:13090) — Washington State COA dataset cannabinoid
+- Jikomes & Zoorob 2018 (*Sci Rep.* 8:4519) — Washington State COA dataset cannabinoid
   content.
 - Formato et al. 2020 (*Molecules.* 25(11):2638, doi:10.3390/molecules25112638,
   PMID 32517131) — verified via PubMed/PMC.
