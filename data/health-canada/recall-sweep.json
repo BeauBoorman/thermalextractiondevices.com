@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "jurisdiction": "Canada (Health Canada)",
+  "retrieved_at": "2026-09-06",
+  "source_feed": "https://recalls-rappels.canada.ca/sites/default/files/opendata-donneesouvertes/HCRSAMOpenData.json",
+  "data_licence": "Open Government Licence - Canada",
+  "feed_rows": 34052,
+  "cannabis_subcategory_rows": 98,
+  "consumer_product_safety_rows": 5194,
+  "selection_rule": "device-relevant recalls only: (a) all vaporizer/vape device recalls in the Consumer product safety organization; (b) cannabis-subcategory recalls whose title/product names vape/vaporizer/510/all-in-one/cartridge/disposable/inhalation hardware",
+  "selected_records": [
+    {
+      "identification_number": "RA-82210",
+      "title": "Arizer Solo III Intergalactic (Black) Portable Vaporizers recalled due to fire and burn hazards",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/arizer-solo-iii-intergalactic-black-portable-vaporizers-recalled-due-fire-and-burn",
+      "organization": "Consumer product safety",
+      "issue": "Fire hazard - Burn hazard",
+      "category": "Electronics",
+      "last_updated": "2026-06-18",
+      "archived": "0"
+    },
+    {
+      "identification_number": null,
+      "title": "CannaPiece Corp. recalls Wild West 96+ Strawberry Stampede Liquid Diamonds 510 Vape due to a labelling issue",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/cannapiece-corp-recalls-wild-west-96-strawberry-stampede-liquid-diamonds-510-vape-due",
+      "organization": "Controlled substances and cannabis",
+      "issue": "Labelling and packaging",
+      "category": "Cannabis",
+      "last_updated": "2026-06-10",
+      "archived": "0"
+    },
+    {
+      "identification_number": null,
+      "title": "CannaPiece Corp. recalls JAYs - Pink Pennifer 0.4g all-in-one vape due to labelling issue",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/cannapiece-corp-recalls-jays-pink-pennifer-04g-all-one-vape-due-labelling-issue",
+      "organization": "Controlled substances and cannabis",
+      "issue": "Labelling and packaging",
+      "category": "Cannabis",
+      "last_updated": "2026-05-20",
+      "archived": "0"
+    },
+    {
+      "identification_number": null,
+      "title": "Culture Kizos inc./Kizos Culture inc. recalls Coterie - Prickly Pear Liquid Diamonds - 1g due to labelling issue",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/culture-kizos-inckizos-culture-inc-recalls-coterie-prickly-pear-liquid-diamonds-1g-due",
+      "organization": "Controlled substances and cannabis",
+      "issue": "Labelling and packaging",
+      "category": "Cannabis",
+      "last_updated": "2025-10-28",
+      "archived": "0"
+    },
+    {
+      "identification_number": "RA-77974",
+      "title": "Arizer Solo II Vaporizer recalled due to burn hazard",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/arizer-solo-ii-vaporizer-recalled-due-burn-hazard",
+      "organization": "Consumer product safety",
+      "issue": "Burn hazard",
+      "category": "Vaping and tobacco products",
+      "last_updated": "2025-08-25",
+      "archived": "0"
+    },
+    {
+      "identification_number": null,
+      "title": "Emblem Cannabis Corporation recalls one lot of Divvy Nebula II CBD 510 Vape Cartridge cannabis extract – for inhalation",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/emblem-cannabis-corporation-recalls-one-lot-divvy-nebula-ii-cbd-510-vape-cartridge",
+      "organization": "Controlled substances and cannabis",
+      "issue": "Labelling and packaging",
+      "category": "Cannabis",
+      "last_updated": "2023-10-04",
+      "archived": "0"
+    },
+    {
+      "identification_number": null,
+      "title": "Truro Cannabis Inc. recalls one lot of Truro CBD 3:2 510 Vape Cartridge cannabis extract",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/truro-cannabis-inc-recalls-one-lot-truro-cbd-32-510-vape-cartridge-cannabis-extract",
+      "organization": "Controlled substances and cannabis",
+      "issue": "Labelling and packaging",
+      "category": "Cannabis",
+      "last_updated": "2022-03-04",
+      "archived": "0"
+    },
+    {
+      "identification_number": "RA-74809",
+      "title": "Various All-in-One disposable cannabis vape pens recalled due to mechanical issue",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/various-all-one-disposable-cannabis-vape-pens-recalled-due-mechanical-issue",
+      "organization": "Controlled substances and cannabis",
+      "issue": "",
+      "category": "Cannabis",
+      "last_updated": "2021-01-22",
+      "archived": "0"
+    },
+    {
+      "identification_number": null,
+      "title": "Grower's Edge Deluxe and Commercial Vaporizers due to burn, fire or electric shock hazard",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/grower-s-edge-deluxe-and-commercial-vaporizers-due-burn-fire-or-electric-shock-hazard",
+      "organization": "Consumer product safety",
+      "issue": "",
+      "category": "Tools and accessories",
+      "last_updated": "2020-03-19",
+      "archived": "0"
+    },
+    {
+      "identification_number": null,
+      "title": "Shenzhen Wismec Electronics Co., Ltd. recalls Wismec Exo Skeleton Vaporizers",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/shenzhen-wismec-electronics-co-ltd-recalls-wismec-exo-skeleton-vaporizers",
+      "organization": "Consumer product safety",
+      "issue": "Burn hazard - Fire hazard",
+      "category": "Electronics",
+      "last_updated": "2018-04-20",
+      "archived": "0"
+    },
+    {
+      "identification_number": "RA-64880",
+      "title": "Firewood Vaporizers Incorporated recalls Firewood 4 Portable Vaporizers",
+      "url": "https://recalls-rappels.canada.ca/en/alert-recall/firewood-vaporizers-incorporated-recalls-firewood-4-portable-vaporizers",
+      "organization": "Consumer product safety",
+      "issue": "Fire hazard",
+      "category": "Chemicals",
+      "last_updated": "2017-10-20",
+      "archived": "1"
+    }
+  ],
+  "modeled_entities": [
+    "recalls/TRCL-0013",
+    "recalls/TRCL-0014",
+    "recalls/TRCL-0015",
+    "recalls/TRCL-0016"
+  ],
+  "not_modeled_notes": [
+    "Grower's Edge Deluxe/Commercial Vaporizers (2020, CPS) and Wismec Exo Skeleton (2018, CPS): no archive entities for these manufacturers.",
+    "Cannabis-subcategory records for extracts/pre-rolls/flower without device hardware naming are out of device-recall scope; they remain a bulk-ingestion candidate.",
+    "The archived notice pages carry full unit, lot, incident, and company detail; the feed rows are discovery-level."
+  ],
+  "limitation": "Discovery-level feed fields only; archived notice pages (retrieved 2026-09-06) are the source of record for the modeled entities."
+}

@@ -4,7 +4,7 @@ title: "Canada (Jurisdiction Profile)"
 parent: jurisdictions
 status: published
 tags: ["jurisdiction", "canada", "international", "regulatory", "deep-data-candidate"]
-relations: []
+relations: [relates_to=recalls/TRCL-0013, relates_to=recalls/TRCL-0014, relates_to=recalls/TRCL-0015, relates_to=recalls/TRCL-0016, relates_to=datasets/TDTS-0028]
 summary: "Jurisdiction profile for Canada: federally legal adult-use cannabis under the Cannabis Act (Health Canada), provincial retail models, licensed-producer open data, subnational modeling required."
 ---
 
@@ -60,7 +60,7 @@ Federal licences: cultivation (standard/micro/nursery), processing (standard/mic
 | Testing-laboratory registry | partial | Licensed analytical testing facilities | no | Part of licensing records |
 | Laboratory testing rules | yes | Cannabis Regulations (SOR/2018-144) | no | Codified testing requirements |
 | Contaminant/action limits | yes | Cannabis Regulations | no | Set in regulation |
-| Recalls/advisories | yes | Health Canada cannabis recalls (Recalls and Safety Alerts database) | partial | Machine-searchable recalls database |
+| Recalls/advisories | yes | Health Canada cannabis recalls (Recalls and Safety Alerts database; open-data JSON/CSV feeds) | yes | Daily-updated machine-readable feed under the Open Government Licence – Canada |
 | Product/package identifiers | yes | Licensed producers' product data; provincial listings | partial | Not a single national open registry |
 | COAs/batch results | no public source located | — | — | No public federal batch database |
 | Sales data | yes | Statistics Canada cannabis surveys and market data | yes | Official statistics |
@@ -69,12 +69,21 @@ Federal licences: cultivation (standard/micro/nursery), processing (standard/mic
 
 ## Recalls / Advisories
 
-Health Canada publishes cannabis recalls through its Recalls and Safety Alerts database (machine-searchable); provincial bodies also publish public health notices.
+Health Canada publishes cannabis and consumer-product recalls through its
+Recalls and Safety Alerts database (machine-searchable; daily-updated
+JSON/CSV open-data feeds under the Open Government Licence – Canada).
+Provincial bodies also publish public health notices. The archive models the
+device-relevant Health Canada recall events that intersect the catalog:
+
+- [Firewood 4 recall (2017)](../recalls/TRCL-0013.md)
+- [HEXO disposable cannabis vape pens recall (2021)](../recalls/TRCL-0014.md)
+- [Arizer Solo II recall (2025)](../recalls/TRCL-0015.md)
+- [Arizer Solo III recall (2026)](../recalls/TRCL-0016.md)
 
 ## Future Ingestion Opportunities
 
 1. Licensed cultivator/processor/seller list → organization/license entities (public table).
-2. Recalls and Safety Alerts cannabis entries → recall/advisory entities.
+2. Recalls and Safety Alerts cannabis entries → recall/advisory entities (the device-relevant subset was swept 2026-09-06; the full cannabis feed remains a bulk-ingestion candidate).
 3. Statistics Canada market data → aggregate dataset records.
 4. Subnational (province) retail models need a `has_subjurisdiction` modeling decision before per-province records are created.
 
@@ -83,8 +92,14 @@ Health Canada publishes cannabis recalls through its Recalls and Safety Alerts d
 - **Statutory framework**: Cannabis Act, S.C. 2018, c. 16 (in force October 17, 2018); Cannabis Regulations (SOR/2018-144); current to 2026-06-17.
 - **Regulator**: Health Canada — https://www.canada.ca/en/health-canada/services/drugs-medication/cannabis/laws-regulations.html
 - **Market data**: https://www.canada.ca/en/health-canada/services/drugs-medication/cannabis/research-data/market.html
-- **Retrieval date**: 2026-08-09
+- **Recalls open data**: Health Canada, Recalls and Safety Alerts open-data feed (JSON/CSV, Open Government Licence – Canada) — https://recalls-rappels.canada.ca/sites/default/files/opendata-donneesouvertes/HCRSAMOpenData.json
+- **Retrieval date**: 2026-08-09; recall feed retrieved 2026-09-06
 
 ## Graph Connections
 
-No existing repository entities are linked to Canada. The page is discoverable from the [Jurisdictions index](../jurisdictions.md).
+Recall entities linked to this jurisdiction:
+[Firewood 4 (TRCL-0013)](../recalls/TRCL-0013.md),
+[HEXO disposable pens (TRCL-0014)](../recalls/TRCL-0014.md),
+[Arizer Solo II (TRCL-0015)](../recalls/TRCL-0015.md), and
+[Arizer Solo III (TRCL-0016)](../recalls/TRCL-0016.md).
+The page is discoverable from the [Jurisdictions index](../jurisdictions.md).
