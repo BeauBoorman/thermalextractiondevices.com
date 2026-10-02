@@ -140,6 +140,19 @@ rejects a fully isolated satellite collection (`CXL-13`), and the DCC generator
 emits conservative organization → laboratory/recall reverse edges when unique
 license-number matches exist.
 
+Device-recall coverage was extended on 2026-09-05 with `recalls/TRCL-0012`: the
+2017 CPSC Firewood 4 battery-fire recall (17-761, ≈400 units) now has its own
+entity linked to `devices/TED-0086` and `manufacturers/TMFR-0028`, closing the
+recall-coverage gap flagged by the device-catalog adversarial review. A sweep
+of the other Milestone-A manufacturers against the CPSC / SaferProducts recall
+database found no additional device recalls to model: PAX, Puffco, and Dr.
+Dabber each show no CPSC recall on record (the review's "PAX Era CPSC 2025"
+candidate does not exist), and no other catalog manufacturer appears in the
+vaporizer recall set. A June 2026 Colorado MED recall of PAX-branded vape oil
+is a state cannabis-product recall in a jurisdiction the archive does not yet
+model (California, Massachusetts, and Michigan only) — a candidate for the
+jurisdiction-expansion lane, not the device-recall graph.
+
 ## Publication hardening update
 
 The publication-hardening work merged, and the git-history rewrite it depended on
