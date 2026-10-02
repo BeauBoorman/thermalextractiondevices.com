@@ -18,7 +18,7 @@ summary: Acidic phytocannabinoid precursor of Δ9-THC, dominant in fresh drug-ty
 | IUPAC name | (6aR,10aR)-1-hydroxy-6,6,9-trimethyl-3-pentyl-6a,7,8,10a-tetrahydro-6H-benzo[c]chromene-2-carboxylic acid |
 | CAS number | 23978-85-0 (THCA-A) |
 | PubChem CID | 98523 |
-| InChIKey | FCHTHPIEJYEJOM-DUYOSMWVSA-N [^1] |
+| InChIKey | UCONUSSAWGCZMV-HZPDHXFCSA-N [^1] |
 | Molecular formula | C22H30O4 |
 | Molecular mass | 358.48 g/mol (exact 358.2144 Da) |
 | Compound class | Cannabinoid acid; meroterpenoid (prenylated benzochromene) |
@@ -83,14 +83,14 @@ Preclinical studies report THCA as a potent PPARγ agonist with neuroprotective 
 
 ## Sources
 
-[^1]: PubChem CID 98523, Δ9-Tetrahydrocannabinolic acid (CAS 23978-85-0). Verified 2026-08-08.
+[^1]: PubChem CID 98523, Δ9-Tetrahydrocannabinolic acid (CAS 23978-85-0). Verified 2026-09-05; standard InChIKey per PubChem PUG REST (the previously printed key, FCHTHPIEJYEJOM-DUYOSMWVSA-N, resolves to no PubChem record and was removed).
 [^2]: Dussy FE, Hamberg C, Luginbühl M, Schwerzmann T, Briellmann TA. Isolation of Δ9-THCA-A from hemp and analytical aspects concerning the determination of Δ9-THC in cannabis products. *Forensic Sci Int.* 2005;149(1):3–10. PMID 15734104. (GC-injector conversion of THCA-A to Δ9-THC; ≈70% analytical conversion, ≈30% recovery under simulated smoking.)
 [^3]: Wang M, Wang YH, Avula B, Radwan MM, Wanas AS, van Antwerp J, Parcher JF, ElSohly MA, Khan IA. Decarboxylation study of acidic cannabinoids: a novel approach using ultra-high-performance supercritical fluid chromatography/photodiode array-mass spectrometry. *Cannabis Cannabinoid Res.* 2016;1(1):262–271. doi:10.1089/can.2016.0020. PMID 28861498. (First-order decarboxylation kinetics; THCA-A Ea ≈85 kJ/mol.)
 [^4]: Eyal AM, Berneman Zeitouni D, Tal D, Schlesinger D, Davidson EM, Raz N. Vapor pressure, vaping, and corrections to misconceptions related to medical cannabis' active pharmaceutical ingredients' physical properties and compositions. *Cannabis Cannabinoid Res.* 2023;8(3):414–425. doi:10.1089/can.2021.0173. PMID 35442765. (Cannabinoid boiling-point figures circulating in marketing are not thermodynamic boiling points; vapor-pressure data are scarce.)
 [^5]: Nadal X, Del Río C, Palomares B, Ferreiro-Vera C, Navarrete C, et al. Tetrahydrocannabinolic acid is a potent PPARγ agonist with neuroprotective activity. *Br J Pharmacol.* 2017;174(23):4263–4276. doi:10.1111/bph.14019. PMID 28853159. (In vitro/cellular assay.)
 [^6]: de Meijer EPM, Bagatta M, Carboni A, Crucitti P, Moliterni VMC, Ranalli P, Mandolino G. The inheritance of chemical phenotype in Cannabis sativa L. *Genetics.* 2003;163(1):335–346. doi:10.1093/genetics/163.1.335. PMID 12586720. (Chemotype I/II/III inheritance.)
 [^7]: Ruhaak LR, Felth J, Karlsson PC, Rafter JJ, Verpoorte R, Bohlin L. Evaluation of the cyclooxygenase inhibiting effects of six major cannabinoids isolated from Cannabis sativa. *Biol Pharm Bull.* 2011;34(5):774–778. doi:10.1248/bpb.34.774. PMID 21532172. (In vitro enzyme assay.)
-[^8]: Jikomes N, Zoorob M. The cannabinoid content of legal cannabis in Washington State varies systematically across testing facilities and popular consumer products. *Sci Rep.* 2018;8:13090. doi:10.1038/s41598-018-22755-2. (Legal-market flower COA dataset; representative, batch-attached ranges.)
+[^8]: Jikomes N, Zoorob M. The cannabinoid content of legal cannabis in Washington State varies systematically across testing facilities and popular consumer products. *Sci Rep.* 2018;8:4519. doi:10.1038/s41598-018-22755-2. (Legal-market flower COA dataset; representative, batch-attached ranges.)
 
 ## Related pages
 
