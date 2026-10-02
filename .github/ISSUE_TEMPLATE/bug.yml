@@ -1,0 +1,58 @@
+name: Bug report
+description: Report an archive, validation, build, or ingestion defect.
+labels: ["bug", "priority:P2"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For security defects, follow SECURITY.md instead of opening a public issue.
+        Do not include secrets, personal data, or private source payloads.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Content and metadata
+        - Theme and navigation
+        - Ingestion
+        - Build and publishing
+        - Repository governance
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What went wrong?
+      description: Describe the observed behavior and affected page, record, or command.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the smallest reproducible example or exact command.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Revision and environment
+      description: Commit SHA, operating system, and Boris/Zig versions where relevant.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and validation
+      description: Public source links, relevant output, and command exit statuses.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Publication safety
+      options:
+        - label: I have excluded secrets, personal data, and private source payloads.
+          required: true

@@ -14,6 +14,27 @@ please read `README.md`, `rules.md`, and `AGENTS.md` before starting.
 4. **Validate locally.** Run every gate below.
 5. **Open a pull request** describing what changed, what evidence the
    content relies on, and which validation commands you ran.
+6. **Get review before merging.** `.github/CODEOWNERS` requests review from
+   `@drawmeanelephant` for every file. The active `Protect main` ruleset
+   requires a pull request, at least one approval, and the passing
+   `Validate & Build Site` check. Use the pull-request template to record
+   context and exact validation results.
+
+## Issue labels
+
+Use the bug or feature issue form and assign one type, one priority, and one
+area label. The forms default to `priority:P2`; maintainers set the final
+priority and apply the area selected in the form.
+
+* **Type:** `bug`, `enhancement`, `documentation`, `chore`, or `question`.
+* **Priority:** `priority:P0` (immediate exposure/outage), `priority:P1`
+  (release blocker/major defect), `priority:P2` (normal planned work), or
+  `priority:P3` (non-blocking improvement/decision).
+* **Area:** `area:content`, `area:theme`, `area:ingest`, `area:build`, or
+  `area:governance`.
+
+`.github/labels.json` records the label names, colors, and descriptions.
+Additional default GitHub labels can still be used when helpful.
 
 ## Parallel work and coordination
 
