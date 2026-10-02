@@ -1,0 +1,54 @@
+name: Feature request
+description: Propose a focused archive or tooling improvement.
+labels: ["enhancement", "priority:P2"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose bounded changes that preserve Boris and the archive's evidence standards.
+        Do not include secrets, personal data, or private source payloads.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Content and metadata
+        - Theme and navigation
+        - Ingestion
+        - Build and publishing
+        - Repository governance
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Who needs this change, and what cannot they do today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the smallest useful change and what remains out of scope.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable outcomes and the validation needed to prove them.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and related work
+      description: Public source links, related issues, and relevant status lanes.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Publication safety
+      options:
+        - label: I have excluded secrets, personal data, and private source payloads.
+          required: true

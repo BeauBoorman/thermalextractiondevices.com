@@ -60,7 +60,7 @@ jobs:
           PY
 
       - name: Set up Zig from canonical metadata
-        uses: mlugg/setup-zig@v2
+        uses: drawmeanelephant/zig-zouave@2d8510d62b517fa786279562cf8b1bdcf0c47b9f
         with:
           version: ${{ steps.boris-metadata.outputs.zig_version }}
 
@@ -112,6 +112,10 @@ jobs:
         run: ./scripts/ted-build.sh
 
       - name: Deploy to Cloudflare Pages
+        # Fork PRs never receive repository secrets, so the deploy step would
+        # fail on a missing CLOUDFLARE_API_TOKEN (seen on PR #46). Build/test
+        # above still run; only the secret-dependent deploy is skipped.
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

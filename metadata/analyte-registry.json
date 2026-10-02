@@ -1,0 +1,978 @@
+{
+  "version": 1,
+  "description": "Canonical analyte registry (v1 scope: analytes the state ingests emit + cannabinoids). Identity fields (aliases beyond adapter spellings, CAS RN, InChIKey, wiki cross-reference) come from the frozen cannabis-chemistry-wiki where a profile exists (source=wiki); everything else is adapter-sourced spelling identity only and makes no chemical identity claim. wiki_path is relative to the cannabis-chemistry-wiki vault root. CAS strings are verbatim from the wiki where the wiki distinguishes stereoisomers. Species-level microbial names (e.g. Aspergillus flavus) are aliases of the genus-level analyte, matching the MA CONTAMINANTS grouping; registry ids follow the existing evidence.py slug vocabulary.",
+  "source": "cannabis-chemistry-wiki (frozen vault) + Massachusetts CCC / Nevada CCB adapter surfaces",
+  "entries": [
+    {
+      "id": "thc",
+      "display": "THC",
+      "class": "cannabinoid",
+      "aliases": [
+        "thc"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "delta-9-thc",
+      "display": "Delta-9 THC",
+      "class": "cannabinoid",
+      "aliases": [
+        "delta-9-tetrahydrocannabinol",
+        "delta-9 thc",
+        "delta9-thc",
+        "d9-thc"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "thca",
+      "display": "THCA",
+      "class": "cannabinoid",
+      "aliases": [
+        "tetrahydrocannabinolic acid",
+        "tetrahydrocannabinolic-acid",
+        "thc-a",
+        "thca"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "delta-8-thc",
+      "display": "Delta-8 THC",
+      "class": "cannabinoid",
+      "aliases": [
+        "delta-8 thc",
+        "delta8-thc",
+        "d8-thc"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "thcv",
+      "display": "THCV",
+      "class": "cannabinoid",
+      "aliases": [
+        "tetrahydrocannabivarin",
+        "thc-v",
+        "thcv"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "thcva",
+      "display": "THCVA",
+      "class": "cannabinoid",
+      "aliases": [
+        "tetrahydrocannabivarinic acid",
+        "thcva"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cbd",
+      "display": "CBD",
+      "class": "cannabinoid",
+      "aliases": [
+        "cannabidiol",
+        "cbd"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cbda",
+      "display": "CBDA",
+      "class": "cannabinoid",
+      "aliases": [
+        "cannabidiolic acid",
+        "cannabidiolic-acid",
+        "cbda"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cbdv",
+      "display": "CBDV",
+      "class": "cannabinoid",
+      "aliases": [
+        "cannabidivarin",
+        "cbd-v",
+        "cbdv"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cbdva",
+      "display": "CBDVA",
+      "class": "cannabinoid",
+      "aliases": [
+        "cannabidivarinic acid",
+        "cbdva"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cbg",
+      "display": "CBG",
+      "class": "cannabinoid",
+      "aliases": [
+        "cannabigerol",
+        "cbg"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cbga",
+      "display": "CBGA",
+      "class": "cannabinoid",
+      "aliases": [
+        "cannabigerolic acid",
+        "cannabigerolic-acid",
+        "cbga"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cbn",
+      "display": "CBN",
+      "class": "cannabinoid",
+      "aliases": [
+        "cannabinol",
+        "cbn"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cbc",
+      "display": "CBC",
+      "class": "cannabinoid",
+      "aliases": [
+        "cannabichromene",
+        "cbc"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cbca",
+      "display": "CBCA",
+      "class": "cannabinoid",
+      "aliases": [
+        "cannabichromenic acid",
+        "cbca"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "total-thc",
+      "display": "Total THC",
+      "class": "calculated",
+      "aliases": [
+        "total thc",
+        "total potential thc",
+        "total active thc"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "total-cbd",
+      "display": "Total CBD",
+      "class": "calculated",
+      "aliases": [
+        "total cbd"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "total-cannabinoids",
+      "display": "Total Cannabinoids",
+      "class": "calculated",
+      "aliases": [
+        "total cannabinoids"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "total-terpenes",
+      "display": "Total Terpenes",
+      "class": "calculated",
+      "aliases": [
+        "total terpenes",
+        "other terpenes"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "alpha-pinene",
+      "display": "α-Pinene",
+      "class": "terpene",
+      "aliases": [
+        "alpha-pinene",
+        "a-pinene",
+        "α-pinene"
+      ],
+      "cas": "80-56-8 (racemic, (±)-α-pinene), 7785-26-4 ((−)-α-pinene), 7785-70-8 ((+)-α-pinene)",
+      "inchikey": "GRWFGVWFFZKLTI-UHFFFAOYSA-N",
+      "wiki_path": "terpene/alpha-pinene-bicyclic-monoterpene-with-ache-inhibition-and-anxiolytic-evidence.md",
+      "source": "wiki"
+    },
+    {
+      "id": "beta-pinene",
+      "display": "β-Pinene",
+      "class": "terpene",
+      "aliases": [
+        "beta-pinene",
+        "b-pinene",
+        "β-pinene"
+      ],
+      "cas": "127-91-3 (racemic / (−)-β-pinene in commerce), 18172-67-3 ((+)-β-pinene)",
+      "inchikey": "WTARULDDTDQWMU-UHFFFAOYSA-N",
+      "wiki_path": "terpene/beta-pinene-bicyclic-monoterpene-pine-dill-hops-marker.md",
+      "source": "wiki"
+    },
+    {
+      "id": "beta-myrcene",
+      "display": "β-Myrcene",
+      "class": "terpene",
+      "aliases": [
+        "beta-myrcene",
+        "b-myrcene",
+        "β-myrcene",
+        "myrcene"
+      ],
+      "cas": "123-35-3",
+      "inchikey": "UAHWPYUMFXYFJY-UHFFFAOYSA-N",
+      "wiki_path": "terpene/myrcene-cannabis-dominant-monoterpene.md",
+      "source": "wiki"
+    },
+    {
+      "id": "d-limonene",
+      "display": "D-Limonene",
+      "class": "terpene",
+      "aliases": [
+        "d-limonene",
+        "limonene"
+      ],
+      "cas": "5989-27-5 (D), 5989-54-8 (L), 138-86-3 (racemic)",
+      "inchikey": "XMGQYMWWDOXHJM-UHFFFAOYSA-N",
+      "wiki_path": "terpene/limonene-citrus-monoterpene-with-human-clinical-anxiolytic-evidence.md",
+      "source": "wiki"
+    },
+    {
+      "id": "eucalyptol",
+      "display": "Eucalyptol",
+      "class": "terpene",
+      "aliases": [
+        "eucalyptol",
+        "1-8-cineole",
+        "cineole"
+      ],
+      "cas": "470-82-6",
+      "inchikey": "WEEGYLXZBRQIMU-UHFFFAOYSA-N",
+      "wiki_path": "terpene/eucalyptol-minty-cineole-monoterpene-ether.md",
+      "source": "wiki"
+    },
+    {
+      "id": "linalool",
+      "display": "Linalool",
+      "class": "terpene",
+      "aliases": [
+        "linalool"
+      ],
+      "cas": "78-70-6 (racemic), 126-91-0 (R-(−)), 126-90-9 (S-(+))",
+      "inchikey": "CDOSHBSSFJOMGT-UHFFFAOYSA-N",
+      "wiki_path": "terpene/linalool-floral-monoterpenoid-with-anxiolytic-anticonvulsant-evidence.md",
+      "source": "wiki"
+    },
+    {
+      "id": "nerolidol",
+      "display": "Nerolidol",
+      "class": "terpene",
+      "aliases": [
+        "nerolidol"
+      ],
+      "cas": "7212-44-4",
+      "inchikey": "FQTLCLSUCSAZDY-SDNWHVSQSA-N",
+      "wiki_path": "terpene/nerolidol-floral-woody-sesquiterpene-alcohol.md",
+      "source": "wiki"
+    },
+    {
+      "id": "terpinolene",
+      "display": "Terpinolene",
+      "class": "terpene",
+      "aliases": [
+        "terpinolene",
+        "alpha-terpinolene"
+      ],
+      "cas": "586-62-9",
+      "inchikey": "MOYAFQVGZZPNRA-UHFFFAOYSA-N",
+      "wiki_path": "terpene/terpinolene-sativa-marker-monocyclic-monoterpene.md",
+      "source": "wiki"
+    },
+    {
+      "id": "alpha-bisabolol",
+      "display": "α-Bisabolol",
+      "class": "terpene",
+      "aliases": [
+        "alpha-bisabolol",
+        "α-bisabolol",
+        "bisabolol"
+      ],
+      "cas": "23089-26-1",
+      "inchikey": "RGZSQWQPBWRIAQ-CABCVRRESA-N",
+      "wiki_path": "terpene/alpha-bisabolol-floral-soothing-sesquiterpene-alcohol.md",
+      "source": "wiki"
+    },
+    {
+      "id": "alpha-humulene",
+      "display": "α-Humulene",
+      "class": "terpene",
+      "aliases": [
+        "alpha-humulene",
+        "α-humulene",
+        "humulene"
+      ],
+      "cas": "6753-98-6",
+      "inchikey": "FAMPSKZZVDUYOS-HRGUGZIWSA-N",
+      "wiki_path": "terpene/alpha-humulene-hoppy-woody-sesquiterpene.md",
+      "source": "wiki"
+    },
+    {
+      "id": "beta-caryophyllene",
+      "display": "β-Caryophyllene",
+      "class": "terpene",
+      "aliases": [
+        "beta-caryophyllene",
+        "β-caryophyllene",
+        "caryophyllene",
+        "bcp",
+        "trans-caryophyllene"
+      ],
+      "cas": "87-44-5",
+      "inchikey": "NPNUFJAVOOONJE-GFUGXAQUSA-N",
+      "wiki_path": "terpene/beta-caryophyllene-cb2-agonist-cannabis-sesquiterpene.md",
+      "source": "wiki"
+    },
+    {
+      "id": "caryophyllene-oxide",
+      "display": "Caryophyllene Oxide",
+      "class": "terpene",
+      "aliases": [
+        "caryophyllene oxide",
+        "caryophyllene-oxide",
+        "beta-caryophyllene oxide",
+        "β-caryophyllene oxide"
+      ],
+      "cas": "1139-30-6",
+      "inchikey": "NVEQFIOZRFFVFW-RGCMKSIDSA-N",
+      "wiki_path": "terpene/caryophyllene-oxide-degradation-marker-dog-alert-sesquiterpene.md",
+      "source": "wiki"
+    },
+    {
+      "id": "ocimene",
+      "display": "Ocimene",
+      "class": "terpene",
+      "aliases": [
+        "ocimene"
+      ],
+      "cas": "13877-91-3",
+      "inchikey": "IHPKGUQCSIINRJ-CSKARUKUSA-N",
+      "wiki_path": "terpene/ocimene-sweet-herbal-acyclic-monoterpene.md",
+      "source": "wiki"
+    },
+    {
+      "id": "arsenic",
+      "display": "Arsenic",
+      "class": "elemental",
+      "aliases": [
+        "arsenic"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cadmium",
+      "display": "Cadmium",
+      "class": "elemental",
+      "aliases": [
+        "cadmium"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "lead",
+      "display": "Lead",
+      "class": "elemental",
+      "aliases": [
+        "lead"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "mercury",
+      "display": "Mercury",
+      "class": "elemental",
+      "aliases": [
+        "mercury"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "total-yeast-and-mold",
+      "display": "Total Yeast and Mold",
+      "class": "microbial",
+      "aliases": [
+        "total yeast and mold"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "coliforms",
+      "display": "Coliforms",
+      "class": "microbial",
+      "aliases": [
+        "coliforms",
+        "total coliforms"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "total-enterobacteriaceae",
+      "display": "Total Enterobacteriaceae",
+      "class": "microbial",
+      "aliases": [
+        "total enterobacteriaceae"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "total-viable-aerobic-bacteria",
+      "display": "Total Viable Aerobic Bacteria",
+      "class": "microbial",
+      "aliases": [
+        "total viable aerobic bacteria"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "ste-coli",
+      "display": "Shiga toxin-producing E. coli",
+      "class": "microbial",
+      "aliases": [
+        "pathogenic e. coli",
+        "shiga toxin-producing e. coli",
+        "e. coli",
+        "e-coli"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "salmonella",
+      "display": "Salmonella",
+      "class": "microbial",
+      "aliases": [
+        "salmonella"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "aspergillus",
+      "display": "Aspergillus",
+      "class": "microbial",
+      "aliases": [
+        "aspergillus",
+        "aspergillus flavus",
+        "aspergillus fumigatus",
+        "aspergillus niger",
+        "aspergillus terreus"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "aflatoxins",
+      "display": "Aflatoxins",
+      "class": "mycotoxin",
+      "aliases": [
+        "aflatoxins"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "ochratoxin-a",
+      "display": "Ochratoxin A",
+      "class": "mycotoxin",
+      "aliases": [
+        "ochratoxin a"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "water-activity",
+      "display": "Water Activity",
+      "class": "physical",
+      "aliases": [
+        "water activity"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "moisture",
+      "display": "Moisture Content",
+      "class": "physical",
+      "aliases": [
+        "moisture content",
+        "moisture"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "foreign-matter",
+      "display": "Foreign Matter Inspection",
+      "class": "physical",
+      "aliases": [
+        "foreign matter inspection",
+        "foreign matter"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "homogeneity",
+      "display": "Homogeneity",
+      "class": "physical",
+      "aliases": [
+        "homogeneity"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "residual-solvents",
+      "display": "Residual Solvents",
+      "class": "solvent",
+      "aliases": [
+        "residual solvents"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "butane",
+      "display": "Butane",
+      "class": "solvent",
+      "aliases": [
+        "butane"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "propane",
+      "display": "Propane",
+      "class": "solvent",
+      "aliases": [
+        "propane"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "heptane",
+      "display": "Heptane",
+      "class": "solvent",
+      "aliases": [
+        "heptane"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "abamectin",
+      "display": "Abamectin",
+      "class": "pesticide",
+      "aliases": [
+        "abamectin"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "acequinocyl",
+      "display": "Acequinocyl",
+      "class": "pesticide",
+      "aliases": [
+        "acequinocyl"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "bifenazate",
+      "display": "Bifenazate",
+      "class": "pesticide",
+      "aliases": [
+        "bifenazate"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "bifenthrin",
+      "display": "Bifenthrin",
+      "class": "pesticide",
+      "aliases": [
+        "bifenthrin"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cyfluthrin",
+      "display": "Cyfluthrin",
+      "class": "pesticide",
+      "aliases": [
+        "cyfluthrin"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "cypermethrin",
+      "display": "Cypermethrin",
+      "class": "pesticide",
+      "aliases": [
+        "cypermethrin"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "daminozide",
+      "display": "Daminozide",
+      "class": "pesticide",
+      "aliases": [
+        "daminozide"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "dimethomorph",
+      "display": "Dimethomorph",
+      "class": "pesticide",
+      "aliases": [
+        "dimethomorph"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "etoxazole",
+      "display": "Etoxazole",
+      "class": "pesticide",
+      "aliases": [
+        "etoxazole"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "fenhexamid",
+      "display": "Fenhexamid",
+      "class": "pesticide",
+      "aliases": [
+        "fenhexamid"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "flonicamid",
+      "display": "Flonicamid",
+      "class": "pesticide",
+      "aliases": [
+        "flonicamid"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "fludioxonil",
+      "display": "Fludioxonil",
+      "class": "pesticide",
+      "aliases": [
+        "fludioxonil"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "imidacloprid",
+      "display": "Imidacloprid",
+      "class": "pesticide",
+      "aliases": [
+        "imidacloprid"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "myclobutanil",
+      "display": "Myclobutanil",
+      "class": "pesticide",
+      "aliases": [
+        "myclobutanil"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "paclobutrazol",
+      "display": "Paclobutrazol",
+      "class": "pesticide",
+      "aliases": [
+        "paclobutrazol"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "piperonyl-butoxide",
+      "display": "Piperonyl Butoxide",
+      "class": "pesticide",
+      "aliases": [
+        "piperonyl butoxide"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "pyrethrins",
+      "display": "Pyrethrins",
+      "class": "pesticide",
+      "aliases": [
+        "pyrethrins",
+        "pyrethrin"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "quintozene",
+      "display": "Quintozene",
+      "class": "pesticide",
+      "aliases": [
+        "quintozene"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "spinetoram",
+      "display": "Spinetoram",
+      "class": "pesticide",
+      "aliases": [
+        "spinetoram"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "spinosad",
+      "display": "Spinosad",
+      "class": "pesticide",
+      "aliases": [
+        "spinosad"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "spirotetramat",
+      "display": "Spirotetramat",
+      "class": "pesticide",
+      "aliases": [
+        "spirotetramat"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "thiamethoxam",
+      "display": "Thiamethoxam",
+      "class": "pesticide",
+      "aliases": [
+        "thiamethoxam"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    },
+    {
+      "id": "trifloxystrobin",
+      "display": "Trifloxystrobin",
+      "class": "pesticide",
+      "aliases": [
+        "trifloxystrobin"
+      ],
+      "cas": null,
+      "inchikey": null,
+      "wiki_path": null,
+      "source": "adapter"
+    }
+  ]
+}

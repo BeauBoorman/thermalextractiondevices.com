@@ -135,10 +135,42 @@ moved between the two baselines, so the 16,350-byte growth is not attributed.
 
 Verified 2026-08-09, still current. The Arizer Solo II and Solo III CPSC recalls
 are modeled as `recalls/TRCL-0010` and `recalls/TRCL-0011`, with source-backed
-relations to the manufacturer and Solo III device record. The crosslink layer
-rejects a fully isolated satellite collection (`CXL-13`), and the DCC generator
-emits conservative organization → laboratory/recall reverse edges when unique
-license-number matches exist.
+relations to the manufacturer and Solo III device record; their Health Canada
+counterparts are `recalls/TRCL-0015` and `recalls/TRCL-0016` (swept
+2026-09-06, see below). The crosslink layer rejects a fully isolated satellite
+collection (`CXL-13`), and the DCC generator emits conservative organization →
+laboratory/recall reverse edges when unique license-number matches exist.
+
+Device-recall coverage was extended on 2026-09-05 with `recalls/TRCL-0012`: the
+2017 CPSC Firewood 4 battery-fire recall (17-761, ≈400 units) now has its own
+entity linked to `devices/TED-0086` and `manufacturers/TMFR-0028`, closing the
+recall-coverage gap flagged by the device-catalog adversarial review. A sweep
+of the other Milestone-A manufacturers against the CPSC / SaferProducts recall
+database found no additional device recalls to model: PAX, Puffco, and Dr.
+Dabber each show no CPSC recall on record (the review's "PAX Era CPSC 2025"
+candidate does not exist), and no other catalog manufacturer appears in the
+vaporizer recall set. A June 2026 Colorado MED recall of PAX-branded vape oil
+is a state cannabis-product recall in a jurisdiction the archive does not yet
+model (California, Massachusetts, and Michigan only) — a candidate for the
+jurisdiction-expansion lane, not the device-recall graph.
+
+Health Canada's recall database was swept on 2026-09-06 via the Recalls and
+Safety Alerts open-data feed (34,052 rows; cannabis subcategory 98; consumer
+product safety 5,194; selection and counts in `datasets/TDTS-0028` and
+`data/health-canada/recall-sweep.json`). Four device-relevant events are now
+modeled: `recalls/TRCL-0013` (Firewood 4, 2017 — Canadian counterpart of CPSC
+17-761), `recalls/TRCL-0014` (HEXO disposable cannabis vape pens, 2021 —
+cannabis-product recall with a device-level hardware cause, ~100,132 units),
+`recalls/TRCL-0015` (Arizer Solo II, 2025 — counterpart of the CPSC notice),
+and `recalls/TRCL-0016` (Arizer Solo III, 2026 — Health Canada / CPSC joint
+recall). Each Canadian notice is paired with its U.S. counterpart entity
+where one exists, and all four link to the Canada jurisdiction profile
+(`jurisdictions/TJUR-0057`). Grower's Edge (2020) and Wismec (2018) vaporizer
+recalls surfaced in the sweep but are unmodeled manufacturers; the remaining
+cannabis-subcategory records are product-scope events outside the
+device-recall graph and remain a bulk-ingestion candidate for the Canada
+lane. Recall coverage is now scoped CPSC / SaferProducts plus Health Canada
+for the catalog's manufacturer set.
 
 ## Publication hardening update
 

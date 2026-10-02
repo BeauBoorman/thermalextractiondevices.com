@@ -1,0 +1,72 @@
+[
+  {
+    "name": "bug",
+    "color": "d73a4a",
+    "description": "A defect in content, validation, rendering, ingestion, or publishing"
+  },
+  {
+    "name": "enhancement",
+    "color": "a2eeef",
+    "description": "A new capability or improvement"
+  },
+  {
+    "name": "documentation",
+    "color": "0075ca",
+    "description": "Documentation, evidence notes, or operational guidance"
+  },
+  {
+    "name": "chore",
+    "color": "ededed",
+    "description": "Repository or tooling maintenance"
+  },
+  {
+    "name": "question",
+    "color": "d876e3",
+    "description": "A maintainer decision or clarification is needed"
+  },
+  {
+    "name": "priority:P0",
+    "color": "b60205",
+    "description": "Immediate action: active exposure or production outage"
+  },
+  {
+    "name": "priority:P1",
+    "color": "d93f0b",
+    "description": "High priority: release blocker or major correctness defect"
+  },
+  {
+    "name": "priority:P2",
+    "color": "fbca04",
+    "description": "Normal priority: planned fix or improvement"
+  },
+  {
+    "name": "priority:P3",
+    "color": "c2e0c6",
+    "description": "Low priority: non-blocking improvement or design decision"
+  },
+  {
+    "name": "area:content",
+    "color": "1d76db",
+    "description": "Archive records, evidence, taxonomy, and metadata"
+  },
+  {
+    "name": "area:theme",
+    "color": "5319e7",
+    "description": "Cantilever presentation, navigation, and local search"
+  },
+  {
+    "name": "area:ingest",
+    "color": "006b75",
+    "description": "Source retrieval, adapters, normalization, and data privacy"
+  },
+  {
+    "name": "area:build",
+    "color": "0e8a16",
+    "description": "Boris integration, validation, CI, and Cloudflare publishing"
+  },
+  {
+    "name": "area:governance",
+    "color": "7057ff",
+    "description": "Review ownership, policies, and repository processes"
+  }
+]
