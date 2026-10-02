@@ -2,9 +2,9 @@
 id: recalls
 title: "Recalls"
 status: published
-tags: ["recall", "california", "safety"]
+tags: ["recall", "california", "safety", "health-canada"]
 relations: []
-summary: "Dated California cannabis recall index sourced from the DCC recalls portal."
+summary: "Dated California cannabis recall index sourced from the DCC recalls portal, plus Michigan CRA and Health Canada device-relevant recall records."
 ---
 
 # Recalls
@@ -18,9 +18,10 @@ Source data are entered by licensees and may later be corrected or revised by th
 </Aside>
 
 This collection indexes cannabis recall notices published by the California
-Department of Cannabis Control. The full official index below is a dated
-snapshot from the [recalls portal](https://recalls.cannabis.ca.gov/recalls) as
-of 2026-08-04.
+Department of Cannabis Control, with additional device-relevant recall
+records from Michigan CRA and Health Canada. The full official California
+index below is a dated snapshot from the
+[recalls portal](https://recalls.cannabis.ca.gov/recalls) as of 2026-08-04.
 
 ## Archive Records
 
@@ -41,6 +42,18 @@ the California count above:
 - [[recalls/TRCL-0007|House Brands Distro / Top Smoke vape recall]]
 - [[recalls/TRCL-0008|Sky Cannabis / Motor City Cannacarts and RIPZ recall]]
 - [[recalls/TRCL-0009|BLOOM / Exhale Systems vape recall]]
+
+### Health Canada records
+
+The following pages preserve Health Canada terminology and are not included
+in the California count above. They result from a 2026-09-06 sweep of the
+Recalls and Safety Alerts open-data feed (Open Government Licence – Canada)
+for device-relevant events:
+
+- [[recalls/TRCL-0013|Firewood 4 recall (2017, Canadian counterpart of CPSC 17-761)]]
+- [[recalls/TRCL-0014|HEXO all-in-one disposable cannabis vape pens recall (2021)]]
+- [[recalls/TRCL-0015|Arizer Solo II recall (2025, Canadian counterpart of the CPSC notice)]]
+- [[recalls/TRCL-0016|Arizer Solo III recall (2026, Health Canada / CPSC joint recall)]]
 
 ## Full Official Index
 

@@ -5,3 +5,18 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=(), interest-cohort=()
   Cross-Origin-Opener-Policy: same-origin
   X-Frame-Options: DENY
+
+# Syndication feeds: correct XML types so browsers and feed readers
+# handle them natively instead of downloading or guessing.
+#
+# NOTE: feed autodiscovery <link rel=alternate> tags are NOT injected into
+# themes/cantilever layouts on purpose: Boris 0.8.1's link audit
+# (EROUTEMISSING) rejects hrefs to any file Boris itself does not publish,
+# and Boris's own --rss cannot be combined with --html-dir. Revisit when a
+# Boris release allows static extra outputs alongside HTML mode.
+/recalls.xml
+  Content-Type: application/rss+xml; charset=utf-8
+/safety-advisories.xml
+  Content-Type: application/rss+xml; charset=utf-8
+/feed.xml
+  Content-Type: application/atom+xml; charset=utf-8

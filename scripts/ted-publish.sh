@@ -58,6 +58,8 @@ cat > "$PUBLISH_DIR/README.txt" <<'EOF'
 Thermal Extraction Devices publishing artifacts
 
 site/      Public HTML site.
+           site/recalls.xml, site/safety-advisories.xml  RSS 2.0 syndication feeds.
+           site/feed.xml                                Combined Atom 1.0 update feed.
 llms.txt   Public crawler/discovery index.
 context/   Provenance-rich bundle for LLM context uploads.
 rag/       Canonical Boris working-context RAG export + sidecar manifest.
@@ -73,6 +75,14 @@ if [[ -f "$ROOT/metadata/cultivar-claims.jsonl" ]]; then
   cp "$ROOT/metadata/cultivar-claims.jsonl" "$PUBLISH_DIR/claims.jsonl"
   echo "✅ cultivar identity claim registry exported to $PUBLISH_DIR/claims.jsonl"
 fi
+
+# Syndication feeds: RSS 2.0 (recalls, safety advisories) and combined
+# Atom (feed.xml) generated from the content tree into the served site
+# directory, beside the Boris-compiled HTML.
+python3 scripts/generate_feeds.py \
+  --content "$CONTENT_DIR" \
+  --output "$PUBLISH_DIR/site" \
+  --site-url "$SITE_URL"
 
 echo "==> Running release audits"
 python3 scripts/audit_public_release.py --config docs/audit-config.json --root "$ROOT" --report "$PUBLISH_DIR/public-release-report.json"

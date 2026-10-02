@@ -90,6 +90,15 @@ if [[ -f "$ROOT/_headers" ]]; then
   echo "==> Security headers manifest copied to $DIST_DIR/_headers"
 fi
 
+# Syndication feeds: generate RSS 2.0 + Atom from the time-ordered
+# collections after the HTML ID audit so feed URLs reference the final
+# output layout. Feeds land at the dist root, where Cloudflare Pages
+# serves them beside index.html.
+python3 scripts/generate_feeds.py \
+  --content "$CONTENT_DIR" \
+  --output "$DIST_DIR" \
+  --site-url "$SITE_URL"
+
 # Public-release audit hook. Audit failures and audit-tool errors are release
 # failures; a broken audit cannot silently produce a deployable build.
 if [[ -f "$ROOT/docs/audit-config.json" ]]; then
